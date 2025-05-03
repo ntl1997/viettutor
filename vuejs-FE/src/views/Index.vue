@@ -764,6 +764,7 @@ import profile from "@/assets/img/profile.jpg";
 import landing from "@/assets/img/landing.jpg";
 
 export default {
+  name: "IndexPage",
   data() {
     return {
       patternVue,
