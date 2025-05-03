@@ -20,6 +20,7 @@ import FooterSmall from "@/components/Footers/FooterSmall.vue";
 import registerBg2 from "@/assets/img/register_bg_2.png";
 
 export default {
+  name: "AuthLayout",
   data() {
     return {
       registerBg2,
