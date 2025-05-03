@@ -1,0 +1,56 @@
+# =========================
+# Build output
+# =========================
+target/
+build/
+!**/src/main/**/target/
+!**/src/test/**/target/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# Maven Wrapper
+!.mvn/wrapper/maven-wrapper.jar
+
+# =========================
+# Application Config
+# =========================
+src/main/resources/application.properties
+src/main/resources/application-*.properties
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# STS (Spring Tool Suite)
+# =========================
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+# =========================
+# IntelliJ IDEA
+# =========================
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# =========================
+# NetBeans
+# =========================
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# =========================
+# VS Code
+# =========================
+.vscode/

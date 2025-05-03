@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-SpringBeApplication<spring-BE>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.fpoly.spring_BE.SpringBeApplication",
+            "projectName": "spring-BE",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
