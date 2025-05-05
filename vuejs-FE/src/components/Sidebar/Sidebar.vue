@@ -15,10 +15,10 @@
       </button>
       <!-- Brand -->
       <router-link
-        class="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
+        class="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-lg uppercase font-bold p-4 px-0"
         to="/"
       >
-        Vue Notus
+        VietTutor
       </router-link>
       <!-- User -->
       <ul class="md:hidden items-center flex flex-wrap list-none">
@@ -41,10 +41,10 @@
           <div class="flex flex-wrap">
             <div class="w-6/12">
               <router-link
-                class="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
+                class="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-lg uppercase font-bold p-4 px-0"
                 to="/"
               >
-                Vue Notus
+                VietTutor
               </router-link>
             </div>
             <div class="w-6/12 flex justify-end">
@@ -75,16 +75,13 @@
         <h6
           class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
         >
-          Admin Layout Pages
+          Giao diện quản trị
         </h6>
         <!-- Navigation -->
 
         <ul class="md:flex-col md:min-w-full flex flex-col list-none">
           <li class="items-center">
-            <router-link
-              to="/admin/dashboard"
-              v-slot="{ href, navigate, isActive }"
-            >
+            <router-link to="/admin/dashboard" v-slot="{ href, navigate, isActive }">
               <a
                 :href="href"
                 @click="navigate"
@@ -99,16 +96,13 @@
                   class="fas fa-tv mr-2 text-sm"
                   :class="[isActive ? 'opacity-75' : 'text-blueGray-300']"
                 ></i>
-                Dashboard
+                Bảng điều khiển
               </a>
             </router-link>
           </li>
 
           <li class="items-center">
-            <router-link
-              to="/admin/settings"
-              v-slot="{ href, navigate, isActive }"
-            >
+            <router-link to="/admin/settings" v-slot="{ href, navigate, isActive }">
               <a
                 :href="href"
                 @click="navigate"
@@ -123,16 +117,13 @@
                   class="fas fa-tools mr-2 text-sm"
                   :class="[isActive ? 'opacity-75' : 'text-blueGray-300']"
                 ></i>
-                Settings
+                Cài đặt
               </a>
             </router-link>
           </li>
 
           <li class="items-center">
-            <router-link
-              to="/admin/tables"
-              v-slot="{ href, navigate, isActive }"
-            >
+            <router-link to="/admin/tables" v-slot="{ href, navigate, isActive }">
               <a
                 :href="href"
                 @click="navigate"
@@ -147,7 +138,7 @@
                   class="fas fa-table mr-2 text-sm"
                   :class="[isActive ? 'opacity-75' : 'text-blueGray-300']"
                 ></i>
-                Tables
+                Bảng
               </a>
             </router-link>
           </li>
@@ -168,7 +159,7 @@
                   class="fas fa-map-marked mr-2 text-sm"
                   :class="[isActive ? 'opacity-75' : 'text-blueGray-300']"
                 ></i>
-                Maps
+                Bản đồ
               </a>
             </router-link>
           </li>
@@ -180,7 +171,7 @@
         <h6
           class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
         >
-          Auth Layout Pages
+          Xác thực
         </h6>
         <!-- Navigation -->
 
@@ -191,7 +182,7 @@
               to="/auth/login"
             >
               <i class="fas fa-fingerprint text-blueGray-300 mr-2 text-sm"></i>
-              Login
+              Đăng nhập
             </router-link>
           </li>
 
@@ -200,10 +191,8 @@
               class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
               to="/auth/register"
             >
-              <i
-                class="fas fa-clipboard-list text-blueGray-300 mr-2 text-sm"
-              ></i>
-              Register
+              <i class="fas fa-clipboard-list text-blueGray-300 mr-2 text-sm"></i>
+              Đăng ký
             </router-link>
           </li>
         </ul>
@@ -214,7 +203,7 @@
         <h6
           class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
         >
-          No Layout Pages
+          Khác
         </h6>
         <!-- Navigation -->
 
@@ -225,7 +214,7 @@
               to="/landing"
             >
               <i class="fas fa-newspaper text-blueGray-300 mr-2 text-sm"></i>
-              Landing Page
+              Giới thiệu
             </router-link>
           </li>
 
@@ -235,7 +224,7 @@
               to="/profile"
             >
               <i class="fas fa-user-circle text-blueGray-300 mr-2 text-sm"></i>
-              Profile Page
+              Hồ sơ
             </router-link>
           </li>
         </ul>
@@ -256,9 +245,7 @@
               target="_blank"
               class="text-blueGray-700 hover:text-blueGray-500 text-sm block mb-4 no-underline font-semibold"
             >
-              <i
-                class="fas fa-paint-brush mr-2 text-blueGray-300 text-base"
-              ></i>
+              <i class="fas fa-paint-brush mr-2 text-blueGray-300 text-base"></i>
               Styles
             </a>
           </li>
@@ -347,23 +334,23 @@
 ); }
 
 <script>
-import NotificationDropdown from "@/components/Dropdowns/NotificationDropdown.vue";
-import UserDropdown from "@/components/Dropdowns/UserDropdown.vue";
+import NotificationDropdown from '@/components/Dropdowns/NotificationDropdown.vue'
+import UserDropdown from '@/components/Dropdowns/UserDropdown.vue'
 
 export default {
   data() {
     return {
-      collapseShow: "hidden",
-    };
+      collapseShow: 'hidden',
+    }
   },
   methods: {
     toggleCollapseShow: function (classes) {
-      this.collapseShow = classes;
+      this.collapseShow = classes
     },
   },
   components: {
     NotificationDropdown,
     UserDropdown,
   },
-};
+}
 </script>

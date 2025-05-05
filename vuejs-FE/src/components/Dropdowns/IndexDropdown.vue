@@ -6,7 +6,7 @@
       ref="btnDropdownRef"
       v-on:click="toggleDropdown($event)"
     >
-      Demo Pages
+      Thêm
     </a>
     <div
       ref="popoverDropdownRef"
@@ -19,92 +19,92 @@
       <span
         class="text-sm pt-2 pb-0 px-4 font-bold block w-full whitespace-nowrap bg-transparent text-blueGray-400"
       >
-        Admin Layout
+        Giao diện quản trị
       </span>
       <router-link
         to="/admin/dashboard"
         class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
       >
-        Dashboard
+        Bảng điều khiển
       </router-link>
       <router-link
         to="/admin/settings"
         class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
       >
-        Settings
+        Cài đặt
       </router-link>
       <router-link
         to="/admin/tables"
         class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
       >
-        Tables
+        Bảng
       </router-link>
       <router-link
         to="/admin/maps"
         class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
       >
-        Maps
+        Bản đồ
       </router-link>
       <div class="h-0 mx-4 my-2 border border-solid border-blueGray-100" />
       <span
         class="text-sm pt-2 pb-0 px-4 font-bold block w-full whitespace-nowrap bg-transparent text-blueGray-400"
       >
-        Auth Layout
+        Đăng ký/Đăng nhập
       </span>
       <router-link
         to="/auth/login"
         class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
       >
-        Login
+        Đăng nhập
       </router-link>
       <router-link
         to="/auth/register"
         class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
       >
-        Register
+        Đăng ký
       </router-link>
       <div class="h-0 mx-4 my-2 border border-solid border-blueGray-100" />
       <span
         class="text-sm pt-2 pb-0 px-4 font-bold block w-full whitespace-nowrap bg-transparent text-blueGray-400"
       >
-        No Layout
+        Khác
       </span>
       <router-link
         to="/landing"
         class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
       >
-        Landing
+        Giới thiệu
       </router-link>
       <router-link
         to="/profile"
         class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
       >
-        Profile
+        Hồ sơ
       </router-link>
     </div>
   </div>
 </template>
 <script>
-import { createPopper } from "@popperjs/core";
+import { createPopper } from '@popperjs/core'
 
 export default {
   data() {
     return {
       dropdownPopoverShow: false,
-    };
+    }
   },
   methods: {
     toggleDropdown: function (event) {
-      event.preventDefault();
+      event.preventDefault()
       if (this.dropdownPopoverShow) {
-        this.dropdownPopoverShow = false;
+        this.dropdownPopoverShow = false
       } else {
-        this.dropdownPopoverShow = true;
+        this.dropdownPopoverShow = true
         createPopper(this.$refs.btnDropdownRef, this.$refs.popoverDropdownRef, {
-          placement: "bottom-start",
-        });
+          placement: 'bottom-start',
+        })
       }
     },
   },
-};
+}
 </script>
