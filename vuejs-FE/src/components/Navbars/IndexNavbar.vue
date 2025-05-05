@@ -2,18 +2,16 @@
   <nav
     class="top-0 fixed z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg bg-white shadow"
   >
-    <div
-      class="container px-4 mx-auto flex flex-wrap items-center justify-between"
-    >
+    <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
       <div
         class="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start"
       >
         <router-link to="/">
           <a
-            class="text-blueGray-700 text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase"
+            class="text-blueGray-700 text-lg font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase"
             href="#pablo"
           >
-            Vue Notus
+            VietTutor
           </a>
         </router-link>
         <button
@@ -29,24 +27,87 @@
         :class="[navbarOpen ? 'block' : 'hidden']"
         id="example-navbar-warning"
       >
-        <ul class="flex flex-col lg:flex-row list-none mr-auto">
+        <!-- <ul class="flex flex-col lg:flex-row list-none mr-auto">
           <li class="flex items-center">
             <a
               class="hover:text-blueGray-500 text-blueGray-700 px-3 py-2 flex items-center text-xs uppercase font-bold"
               href="https://www.creative-tim.com/learning-lab/tailwind/vue/overview/notus?ref=vn-index-navbar"
             >
-              <i
-                class="text-blueGray-400 far fa-file-alt text-lg leading-lg mr-2"
-              />
+              <i class="text-blueGray-400 far fa-file-alt text-lg leading-lg mr-2" />
               Docs
             </a>
           </li>
-        </ul>
+        </ul> -->
+
         <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
+          <li class="flex items-center">
+            <router-link
+              to="/"
+              class="hover:text-blueGray-500 text-blueGray-700 px-3 py-2 flex items-center text-xs uppercase font-bold"
+            >
+              Lớp mới
+            </router-link>
+          </li>
+
+          <li class="flex items-center">
+            <router-link
+              to="/"
+              class="hover:text-blueGray-500 text-blueGray-700 px-3 py-2 flex items-center text-xs uppercase font-bold"
+            >
+              Gia sư
+            </router-link>
+          </li>
+
+          <li class="flex items-center">
+            <router-link
+              to="/"
+              class="hover:text-blueGray-500 text-blueGray-700 px-3 py-2 flex items-center text-xs uppercase font-bold"
+            >
+              Học phí tham khảo
+            </router-link>
+          </li>
+
+          <li class="flex items-center">
+            <router-link
+              to="/"
+              class="hover:text-blueGray-500 text-blueGray-700 px-3 py-2 flex items-center text-xs uppercase font-bold"
+            >
+              Tìm gia sư
+            </router-link>
+          </li>
+
+          <li class="flex items-center">
+            <router-link
+              to="/"
+              class="hover:text-blueGray-500 text-blueGray-700 px-3 py-2 flex items-center text-xs uppercase font-bold"
+            >
+              Đăng ký làm gia sư
+            </router-link>
+          </li>
+
+          <li class="flex items-center">
+            <router-link
+              to="/"
+              class="hover:text-blueGray-500 text-blueGray-700 px-3 py-2 flex items-center text-xs uppercase font-bold"
+            >
+              Bài viết
+            </router-link>
+          </li>
+
+          <li class="flex items-center">
+            <router-link
+              to="/"
+              class="hover:text-blueGray-500 text-blueGray-700 px-3 py-2 flex items-center text-xs uppercase font-bold"
+            >
+              Liên hệ
+            </router-link>
+          </li>
+
           <li class="flex items-center">
             <index-dropdown />
           </li>
-          <li class="flex items-center">
+
+          <!-- <li class="flex items-center">
             <a
               class="hover:text-blueGray-500 text-blueGray-700 px-3 py-2 flex items-center text-xs uppercase font-bold"
               href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdemos.creative-tim.com%2Fvue-notus%2F%23%2F"
@@ -86,6 +147,15 @@
             >
               <i class="fas fa-arrow-alt-circle-down"></i> Download
             </button>
+          </li> -->
+
+          <li class="flex items-center">
+            <router-link
+              to="/auth/login"
+              class="bg-emerald-500 text-white active:bg-emerald-600 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
+            >
+              Đăng nhập
+            </router-link>
           </li>
         </ul>
       </div>
@@ -94,21 +164,21 @@
 </template>
 
 <script>
-import IndexDropdown from "@/components/Dropdowns/IndexDropdown.vue";
+import IndexDropdown from '@/components/Dropdowns/IndexDropdown.vue'
 
 export default {
   data() {
     return {
       navbarOpen: false,
-    };
+    }
   },
   methods: {
     setNavbarOpen: function () {
-      this.navbarOpen = !this.navbarOpen;
+      this.navbarOpen = !this.navbarOpen
     },
   },
   components: {
     IndexDropdown,
   },
-};
+}
 </script>

@@ -11,12 +11,10 @@
         class="text-white text-sm uppercase hidden lg:inline-block font-semibold"
         href="javascript:void(0)"
       >
-        Dashboard
+        Bảng điều khiển
       </a>
       <!-- Form -->
-      <form
-        class="md:flex hidden flex-row flex-wrap items-center lg:ml-auto mr-3"
-      >
+      <form class="md:flex hidden flex-row flex-wrap items-center lg:ml-auto mr-3">
         <div class="relative flex w-full flex-wrap items-stretch">
           <span
             class="z-10 h-full leading-snug font-normal absolute text-center text-blueGray-300 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-3"
@@ -40,11 +38,11 @@
 </template>
 
 <script>
-import UserDropdown from "@/components/Dropdowns/UserDropdown.vue";
+import UserDropdown from '@/components/Dropdowns/UserDropdown.vue'
 
 export default {
   components: {
     UserDropdown,
   },
-};
+}
 </script>
