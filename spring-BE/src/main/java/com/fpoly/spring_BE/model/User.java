@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 // import jakarta.validation.constraints.NotNull;
@@ -51,14 +53,18 @@ public class User {
     private Tutor tutor;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private List<Notification> notifications = new ArrayList<>();
 
     @OneToMany(mappedBy = "postedBy", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private List<Class> classes = new ArrayList<>();
 
     @OneToMany(mappedBy = "ratedBy", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private List<TutorRating> tutorRatings = new ArrayList<>();
 
     @OneToMany(mappedBy = "admin", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private List<ClassApproval> classApprovals = new ArrayList<>();
 }
