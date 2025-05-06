@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "Levels")
 @Data
@@ -23,5 +25,6 @@ public class Level {
     private String name;
 
     @OneToMany(mappedBy = "level", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private List<Class> classes;
 }
