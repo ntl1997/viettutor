@@ -7,9 +7,7 @@
         >
           <div class="rounded-t mb-0 px-6 py-6">
             <div class="text-center mb-3">
-              <h6 class="text-blueGray-500 text-sm font-bold">
-                Sign in with
-              </h6>
+              <h6 class="text-blueGray-500 text-sm font-bold">Sign in with</h6>
             </div>
             <div class="btn-wrapper text-center">
               <button
@@ -68,9 +66,7 @@
                     type="checkbox"
                     class="form-checkbox border-0 rounded text-blueGray-700 ml-1 w-5 h-5 ease-linear transition-all duration-150"
                   />
-                  <span class="ml-2 text-sm font-semibold text-blueGray-600">
-                    Remember me
-                  </span>
+                  <span class="ml-2 text-sm font-semibold text-blueGray-600"> Remember me </span>
                 </label>
               </div>
 
@@ -102,15 +98,15 @@
   </div>
 </template>
 <script>
-import github from "@/assets/img/github.svg";
-import google from "@/assets/img/google.svg";
+import github from '@/assets/img/github.svg'
+import google from '@/assets/img/google.svg'
 
 export default {
   data() {
     return {
       github,
       google,
-    };
+    }
   },
-};
+}
 </script>

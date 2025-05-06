@@ -23,6 +23,7 @@ import Register from '@/views/auth/Register.vue'
 import Landing from '@/views/Landing.vue'
 import Profile from '@/views/Profile.vue'
 import Index from '@/views/Index.vue'
+import TutorView from '@/views/TutorView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -89,6 +90,10 @@ const router = createRouter({
     {
       path: '/',
       component: Index,
+    },
+    {
+      path: '/TutorView',
+      component: TutorView,
     },
     { path: '/:pathMatch(.*)*', redirect: '/' },
   ],
