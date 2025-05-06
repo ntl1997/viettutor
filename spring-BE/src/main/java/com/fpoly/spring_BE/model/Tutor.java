@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "Tutors")
 @Data
@@ -45,14 +47,18 @@ public class Tutor {
     private User user;
 
     @OneToMany(mappedBy = "tutor")
+    @JsonIgnore
     private List<Transaction> transactions;
 
     @OneToMany(mappedBy = "tutor", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private Set<TutorClassMatch> tutorClassMatches;
 
     @OneToMany(mappedBy = "tutor", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private Set<TutorApplication> tutorApplications;
 
     @OneToMany(mappedBy = "tutor", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private Set<TutorRating> tutorRatings;
 }
