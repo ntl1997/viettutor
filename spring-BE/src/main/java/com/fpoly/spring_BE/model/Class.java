@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.Date;
 import java.util.List;
@@ -43,13 +44,15 @@ public class Class {
     private Tutor preferredTutor;
 
     @OneToMany(mappedBy = "aClass", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private List<ClassApproval> classApprovals;
 
     @OneToMany(mappedBy = "aClass", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private List<Transaction> transactions;
 
     @OneToMany(mappedBy = "aClass", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonBackReference
+    @JsonIgnore
     private List<TutorClassMatch> tutorClassMatches;
 
     // Attributes
