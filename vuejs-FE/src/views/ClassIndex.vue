@@ -4,26 +4,26 @@
   <!-- search bar -->
   <section class="bg-cover bg-center py-6 mt-16 bg-custom-image">
     <div class="container mx-auto px-4">
-      <div class="flex justify-center flex-wrap gap-4 items-center">
+      <div class="flex flex-wrap justify-center gap-4 items-center">
         <input
           type="text"
           placeholder="Môn học"
-          class="px-4 py-2 rounded border border-gray-300 w-40"
+          class="px-4 py-2 rounded border border-gray-300 w-full sm:w-40"
         />
-        <select class="px-4 py-2 rounded border border-gray-300 w-36">
+        <select class="px-4 py-2 rounded border border-gray-300 w-full sm:w-36">
           <option>Trình độ</option>
           <option value="student">Sinh viên</option>
           <option value="teacher">Giáo viên</option>
           <option value="graduated">Đã tốt nghiệp</option>
         </select>
-        <select class="px-4 py-2 rounded border border-gray-300 w-40">
+        <select class="px-4 py-2 rounded border border-gray-300 w-full sm:w-40">
           <option>Khu vực</option>
           <option value="hcm">Hồ Chí Minh</option>
           <option value="hn">Hà Nội</option>
           <option value="dn">Đà Nẵng</option>
         </select>
         <a
-          class="inline-block rounded-sm bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:ring-3 focus:outline-hidden"
+          class="inline-block rounded-sm bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:ring-3 focus:outline-hidden w-full sm:w-auto text-center"
           href="#"
         >
           Tìm
@@ -36,17 +36,17 @@
 
   <div class="container mx-auto px-4 py-4">
     <!-- content -->
-    <div class="grid grid-cols-4 lg:grid-cols-4 px-4 py-4">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 px-4 py-4">
       <div class="rounded lg:col-span-3">
         <div class="rounded p-4">
-          <div class="max-w-3xl mx-auto p-6 bg-white rounded-xl shadow-md space-y-6">
+          <div class="max-w-full lg:max-w-3xl mx-auto p-6 bg-white rounded-xl shadow-md space-y-6">
             <div>
-              <h1 class="text-xl font-semibold text-gray-800">
+              <h1 class="text-lg sm:text-xl font-semibold text-gray-800">
                 Yêu cầu: Giao tiếp bằng Tiếng Hàn để học môn Tiếng Việt
               </h1>
             </div>
 
-            <div class="grid grid-cols-2 gap-4 lg:grid-cols-2 lg:gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-8">
               <div class="rounded">
                 <p class="text-sm text-gray-500">
                   Mã lớp: <span class="font-bold">24320</span> ·
@@ -145,7 +145,7 @@
     </div>
 
     <!-- pagination -->
-    <ul class="flex justify-center gap-1 text-gray-900 dark:text-white">
+    <ul class="flex flex-wrap justify-center gap-1 text-gray-900 dark:text-white">
       <li>
         <a
           href="#"
@@ -214,7 +214,7 @@
           >
             <path
               fill-rule="evenodd"
-              d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+              d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4-4a1 1 0 01-1.414 0z"
               clip-rule="evenodd"
             />
           </svg>
