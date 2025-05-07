@@ -91,6 +91,7 @@ const router = createRouter({
       component: Index,
     },
     { path: '/:pathMatch(.*)*', redirect: '/' },
+    { path: '/lop-moi', component: () => import('@/views/ClassIndex.vue') },
   ],
 })
 
