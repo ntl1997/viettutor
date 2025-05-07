@@ -126,7 +126,8 @@
                     Tìm gia sư <span style="color: green">toàn quốc</span>
                   </h6>
                   <p class="mt-4 mb-6 text-xl lg:text-2xl leading-relaxed text-blueGray-500">
-                    Kết nối gia sư khắp các tỉnh thành, đáp ứng mọi nhu cầu học tập.
+                    Kết nối gia sư uy tín khắp các tỉnh thành 
+                    trên toàn quốc, đáp ứng mọi nhu cầu học tập.
                   </p>
                 </div>
               </div>
