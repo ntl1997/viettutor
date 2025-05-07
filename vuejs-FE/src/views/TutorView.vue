@@ -30,16 +30,27 @@
             class="inline-block rounded-sm bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:ring-3 focus:outline-hidden"
             href="#"
           >
-            Tìm
+            🔍Tìm
           </a>
         </div>
       </div>
     </section>
 
-    <div class="flex-grow">
-      <h1 class="text-center text-2xl mt-4">Trang Gia Sư</h1>
-    </div>
+    <div class="flex justify-center mt-auto mb-37">
+      <div class="flex w-full max-w-screen-xl">
+        <!-- Section trái -->
+        <div class="w-3/4 bg-gray-200 p-4">
+          <h2 class="text-xl font-bold">Section trái</h2>
+          <p>Đây là section trái, chiếm 75% chiều rộng.</p>
+        </div>
 
+        <!-- Section phải -->
+        <div class="w-1/4 bg-gray-400 p-4">
+          <h2 class="text-xl font-bold">Section phải</h2>
+          <p>Đây là section phải, chiếm 25% chiều rộng.</p>
+        </div>
+      </div>
+    </div>
     <FooterDown />
   </div>
 </template>

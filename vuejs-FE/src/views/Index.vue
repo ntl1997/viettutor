@@ -608,7 +608,7 @@
         class="-mt-20 top-0 bottom-auto left-0 right-0 w-full absolute h-20"
         style="transform: translateZ(0)"
       >
-        <svg
+        <!-- <svg
           class="absolute bottom-0 overflow-hidden"
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="none"
@@ -618,7 +618,7 @@
           y="0"
         >
           <polygon class="text-blueGray-200 fill-current" points="2560 0 2560 100 0 100"></polygon>
-        </svg>
+        </svg> -->
       </div>
 
       <div class="container mx-auto">
