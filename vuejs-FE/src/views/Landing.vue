@@ -17,14 +17,14 @@
           <div class="items-center flex flex-wrap">
             <div class="w-full lg:w-8/12 px-4 ml-auto mr-auto text-center">
               <div class="pr-12">
-                <h2 class="text-white text-2xl font-light leading-snug">
+                <h2 class="text-white text-3xl font-light leading-snug mb-6">
                   Đội ngũ gia sư <span class="font-semibold text-green-400">Tài Năng Trẻ</span> gồm
                   giáo viên và sinh viên giỏi, chuyên môn hóa từng bộ môn, nhận dạy kèm tại nhà trên
                   cả nước.
                 </h2>
                 <h1
                   class="text-white font-extrabold mt-4 text-center flex justify-center space-x-4"
-                  style="font-size: 5rem; text-transform: uppercase"
+                  style="font-size: 6rem; text-transform: uppercase"
                 >
                   <span class="text-yellow-500">HÃY</span>
                   <span class="text-green-500" style="color: green">TÌM</span>
@@ -34,23 +34,32 @@
                   <span class="text-green-500">NGAY!</span>
                 </h1>
 
-                <div class="mt-4 flex justify-center items-center">
+                <div class="mt-6 flex justify-center items-center">
                   <input
                     type="text"
                     placeholder="Hãy nhập một môn học!"
-                    class="w-full max-w-md px-4 py-3 rounded-l-full text-gray-800 placeholder-gray-400 focus:outline-none shadow-md"
-                    style="border-top-left-radius: 9999px; border-bottom-left-radius: 9999px"
+                    class="w-full max-w-md px-4 py-3 rounded-l-full text-gray-800 placeholder-gray-400 focus:outline-none shadow-md text-lg"
+                    style="
+                      border-top-left-radius: 9999px;
+                      border-bottom-left-radius: 9999px;
+                      font-size: 1.5rem;
+                    "
                   />
                   <button
-                    class="bg-green-500 hover:bg-green-600 text-white font-bold px-6 py-3 rounded-r-full shadow-md"
-                    style="border-top-right-radius: 9999px; border-bottom-right-radius: 9999px"
+                    class="bg-green-500 hover:bg-green-600 text-white font-bold px-6 py-3 rounded-r-full shadow-md text-lg"
+                    style="
+                      border-top-right-radius: 9999px;
+                      border-bottom-right-radius: 9999px;
+                      font-size: 1.5rem;
+                    "
                   >
                     Tìm Gia Sư Ngay!
                   </button>
                 </div>
 
                 <button
-                  class="mt-4 bg-yellow-400 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded-full shadow-lg"
+                  class="mt-6 bg-yellow-400 hover:bg-yellow-500 text-white font-bold py-3 px-6 rounded-full shadow-lg text-lg"
+                  style="font-size: 1.5rem"
                 >
                   Tham gia vào đội ngũ Gia Sư !!!
                 </button>
@@ -93,10 +102,11 @@
                   >
                     <i class="fas fa-award"></i>
                   </div>
-                  <h6 class="text-xl font-semibold">Awarded Agency</h6>
-                  <p class="mt-2 mb-4 text-blueGray-500">
-                    Divide details about your product or agency work into parts. A paragraph
-                    describing a feature will be enough.
+                  <h6 class="text-3xl lg:text-4xl font-bold">
+                    Đội ngũ <span style="color: green">chất lượng cao</span>
+                  </h6>
+                  <p class="mt-4 mb-6 text-xl lg:text-2xl leading-relaxed text-blueGray-500">
+                    Gia sư tuyển chọn kỹ, giàu kinh nghiệm, cam kết lộ trình học cá nhân hoá.
                   </p>
                 </div>
               </div>
@@ -112,10 +122,11 @@
                   >
                     <i class="fas fa-retweet"></i>
                   </div>
-                  <h6 class="text-xl font-semibold">Free Revisions</h6>
-                  <p class="mt-2 mb-4 text-blueGray-500">
-                    Keep you user engaged by providing meaningful information. Remember that by this
-                    time, the user is curious.
+                  <h6 class="text-3xl lg:text-4xl font-bold">
+                    Tìm gia sư <span style="color: green">toàn quốc</span>
+                  </h6>
+                  <p class="mt-4 mb-6 text-xl lg:text-2xl leading-relaxed text-blueGray-500">
+                    Kết nối gia sư khắp các tỉnh thành, đáp ứng mọi nhu cầu học tập.
                   </p>
                 </div>
               </div>
@@ -131,10 +142,11 @@
                   >
                     <i class="fas fa-fingerprint"></i>
                   </div>
-                  <h6 class="text-xl font-semibold">Verified Company</h6>
-                  <p class="mt-2 mb-4 text-blueGray-500">
-                    Write a few lines about each one. A paragraph describing a feature will be
-                    enough. Keep you user engaged!
+                  <h6 class="text-3xl lg:text-4xl font-bold">
+                    Hỗ trợ nhiệt tình <span style="color: green">24/7</span>
+                  </h6>
+                  <p class="mt-4 mb-6 text-xl lg:text-2xl leading-relaxed text-blueGray-500">
+                    Hỗ trợ trực tuyến 24/7, phản hồi tức thì mọi thắc mắc.
                   </p>
                 </div>
               </div>
@@ -142,27 +154,75 @@
           </div>
 
           <div class="flex flex-wrap items-center mt-32">
+            <!-- Lý do chọn chúng tôi – 2 cột, 6 mục -->
             <div class="w-full md:w-5/12 px-4 mr-auto ml-auto">
-              <div
-                class="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-white"
-              >
-                <i class="fas fa-user-friends text-xl"></i>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-12 text-white">
+                <!-- 1. Chất lượng -->
+                <div class="flex space-x-5">
+                  <i class="fas fa-thumbs-up text-4xl text-green-400 shrink-0"></i>
+                  <div>
+                    <h4 class="text-2xl font-semibold mb-2">Chất lượng</h4>
+                    <p class="text-lg leading-relaxed opacity-90">
+                      Đội ngũ giáo viên chọn lọc kỹ, chuyên môn cao, tâm&nbsp;huyết với nghề.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- 2. Uy tín -->
+                <div class="flex space-x-5">
+                  <i class="fas fa-gem text-4xl text-green-400 shrink-0"></i>
+                  <div>
+                    <h4 class="text-2xl font-semibold mb-2">Uy tín</h4>
+                    <p class="text-lg leading-relaxed opacity-90">
+                      Hơn 10 năm kinh nghiệm, am hiểu phụ&nbsp;huynh &amp; học&nbsp;viên.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- 3. Chương trình học -->
+                <div class="flex space-x-5">
+                  <i class="fas fa-clipboard-list text-4xl text-green-400 shrink-0"></i>
+                  <div>
+                    <h4 class="text-2xl font-semibold mb-2">Chương trình học</h4>
+                    <p class="text-lg leading-relaxed opacity-90">
+                      Luôn cập nhật, phù hợp cải cách mới của Bộ&nbsp;GD &amp;&nbsp;ĐT.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- 4. Cách dạy và học -->
+                <div class="flex space-x-5">
+                  <i class="fas fa-comments text-4xl text-green-400 shrink-0"></i>
+                  <div>
+                    <h4 class="text-2xl font-semibold mb-2">Cách dạy và học</h4>
+                    <p class="text-lg leading-relaxed opacity-90">
+                      Phương pháp mềm dẻo, giúp học viên tiếp thu &amp; tiến bộ nhanh.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- 5. Sự hài lòng -->
+                <div class="flex space-x-5">
+                  <i class="fas fa-heart text-4xl text-green-400 shrink-0"></i>
+                  <div>
+                    <h4 class="text-2xl font-semibold mb-2">Sự hài lòng</h4>
+                    <p class="text-lg leading-relaxed opacity-90">
+                      Hài lòng của phụ huynh &amp; thành công của học&nbsp;viên là ưu tiên số 1.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- 6. Kết nối nhanh chóng -->
+                <div class="flex space-x-5">
+                  <i class="fas fa-stopwatch text-4xl text-green-400 shrink-0"></i>
+                  <div>
+                    <h4 class="text-2xl font-semibold mb-2">Kết nối nhanh chóng</h4>
+                    <p class="text-lg leading-relaxed opacity-90">
+                      Chỉ 2 phút điền form – chúng tôi liên hệ ngay với gia sư phù hợp.
+                    </p>
+                  </div>
+                </div>
               </div>
-              <h3 class="text-3xl mb-2 font-semibold leading-normal">
-                Working with us is a pleasure
-              </h3>
-              <p class="text-lg font-light leading-relaxed mt-4 mb-4 text-blueGray-600">
-                Don't let your uses guess by attaching tooltips and popoves to any element. Just
-                make sure you enable them first via JavaScript.
-              </p>
-              <p class="text-lg font-light leading-relaxed mt-0 mb-4 text-blueGray-600">
-                The kit comes with three pre-built pages to help you get started faster. You can
-                change the text and images and you're good to go. Just make sure you enable them
-                first via JavaScript.
-              </p>
-              <router-link to="/" class="font-bold text-blueGray-700 mt-8">
-                Check Vue Notus!
-              </router-link>
             </div>
 
             <div class="w-full md:w-4/12 px-4 mr-auto ml-auto">
@@ -171,7 +231,7 @@
               >
                 <img
                   alt="..."
-                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80"
+                  src="https://giasunhatanh.vn/wp-content/uploads/2020/10/gia-su-thcs.jpg"
                   class="w-full align-middle rounded-t-lg"
                 />
                 <blockquote class="relative p-8 mb-4">
@@ -186,11 +246,9 @@
                       class="text-emerald-500 fill-current"
                     ></polygon>
                   </svg>
-                  <h4 class="text-xl font-bold text-white">Top Notch Services</h4>
-                  <p class="text-md font-light mt-2 text-white">
-                    The Arctic Ocean freezes every winter and much of the sea-ice then thaws every
-                    summer, and that process will continue whatever happens.
-                  </p>
+                  <h4 class="text-4xl font-bold text-white text-center">
+                    Tại sao bạn <span style="color: yellow">Chọn chúng tôi</span>?
+                  </h4>
                 </blockquote>
               </div>
             </div>
