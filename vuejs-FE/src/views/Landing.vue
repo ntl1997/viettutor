@@ -156,70 +156,82 @@
           </div>
 
           <div class="flex flex-wrap items-center mt-32">
-            <!-- Lý do chọn chúng tôi – 2 cột, 6 mục -->
-            <div class="w-full md:w-5/12 px-4 mr-auto ml-auto">
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-12 text-gray-800">
-                <!-- 1. Chất lượng -->
-                <div class="flex space-x-5">
-                  <i class="fas fa-thumbs-up text-4xl text-green-400 shrink-0"></i>
+            <!-- Feature Grid -->
+            <div class="w-full md:w-5/12 px-4 mx-auto">
+              <div class="grid gap-6 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-2 text-gray-800">
+                <!-- Item -->
+                <div
+                  class="flex items-start p-5 space-x-4 bg-white rounded-2xl shadow hover:shadow-lg transition-shadow duration-300"
+                >
+                  <i class="fas fa-thumbs-up text-4xl text-emerald-500 shrink-0"></i>
                   <div>
-                    <h4 class="text-2xl font-semibold mb-2">Chất lượng</h4>
-                    <p class="text-lg leading-relaxed">
+                    <h4 class="mb-1 text-xl font-semibold">Chất lượng</h4>
+                    <p class="text-base leading-relaxed">
                       Đội ngũ giáo viên chọn lọc kỹ, chuyên môn cao, tâm&nbsp;huyết với nghề.
                     </p>
                   </div>
                 </div>
 
-                <!-- 2. Uy tín -->
-                <div class="flex space-x-5">
-                  <i class="fas fa-gem text-4xl text-green-400 shrink-0"></i>
+                <!-- Item -->
+                <div
+                  class="flex items-start p-5 space-x-4 bg-white rounded-2xl shadow hover:shadow-lg transition-shadow duration-300"
+                >
+                  <i class="fas fa-gem text-4xl text-emerald-500 shrink-0"></i>
                   <div>
-                    <h4 class="text-2xl font-semibold mb-2">Uy tín</h4>
-                    <p class="text-lg leading-relaxed">
+                    <h4 class="mb-1 text-xl font-semibold">Uy tín</h4>
+                    <p class="text-base leading-relaxed">
                       Hơn 10 năm kinh nghiệm, am hiểu phụ&nbsp;huynh &amp; học&nbsp;viên.
                     </p>
                   </div>
                 </div>
 
-                <!-- 3. Chương trình học -->
-                <div class="flex space-x-5">
-                  <i class="fas fa-clipboard-list text-4xl text-green-400 shrink-0"></i>
+                <!-- Item -->
+                <div
+                  class="flex items-start p-5 space-x-4 bg-white rounded-2xl shadow hover:shadow-lg transition-shadow duration-300"
+                >
+                  <i class="fas fa-clipboard-list text-4xl text-emerald-500 shrink-0"></i>
                   <div>
-                    <h4 class="text-2xl font-semibold mb-2">Chương trình học</h4>
-                    <p class="text-lg leading-relaxed">
+                    <h4 class="mb-1 text-xl font-semibold">Chương trình học</h4>
+                    <p class="text-base leading-relaxed">
                       Luôn cập nhật, phù hợp cải cách mới của Bộ&nbsp;GD &amp;&nbsp;ĐT.
                     </p>
                   </div>
                 </div>
 
-                <!-- 4. Cách dạy và học -->
-                <div class="flex space-x-5">
-                  <i class="fas fa-comments text-4xl text-green-400 shrink-0"></i>
+                <!-- Item -->
+                <div
+                  class="flex items-start p-5 space-x-4 bg-white rounded-2xl shadow hover:shadow-lg transition-shadow duration-300"
+                >
+                  <i class="fas fa-comments text-4xl text-emerald-500 shrink-0"></i>
                   <div>
-                    <h4 class="text-2xl font-semibold mb-2">Cách dạy và học</h4>
-                    <p class="text-lg leading-relaxed">
+                    <h4 class="mb-1 text-xl font-semibold">Cách dạy và học</h4>
+                    <p class="text-base leading-relaxed">
                       Phương pháp mềm dẻo, giúp học viên tiếp thu &amp; tiến bộ nhanh.
                     </p>
                   </div>
                 </div>
 
-                <!-- 5. Sự hài lòng -->
-                <div class="flex space-x-5">
-                  <i class="fas fa-heart text-4xl text-green-400 shrink-0"></i>
+                <!-- Item -->
+                <div
+                  class="flex items-start p-5 space-x-4 bg-white rounded-2xl shadow hover:shadow-lg transition-shadow duration-300"
+                >
+                  <i class="fas fa-heart text-4xl text-emerald-500 shrink-0"></i>
                   <div>
-                    <h4 class="text-2xl font-semibold mb-2">Sự hài lòng</h4>
-                    <p class="text-lg leading-relaxed">
+                    <h4 class="mb-1 text-xl font-semibold">Sự hài lòng</h4>
+                    <p class="text-base leading-relaxed">
                       Hài lòng của phụ huynh &amp; thành công của học&nbsp;viên là ưu tiên số 1.
                     </p>
                   </div>
                 </div>
 
-                <!-- 6. Kết nối nhanh chóng -->
-                <div class="flex space-x-5">
-                  <i class="fas fa-stopwatch text-4xl text-green-400 shrink-0"></i>
+                <!-- Item -->
+                <div
+                  class="flex items-start p-5 space-x-4 bg-white rounded-2xl shadow hover:shadow-lg transition-shadow duration-300"
+                >
+                  <i class="fas fa-stopwatch text-4xl text-emerald-500 shrink-0"></i>
                   <div>
-                    <h4 class="text-2xl font-semibold mb-2">Kết nối nhanh chóng</h4>
-                    <p class="text-lg leading-relaxed">
+                    <h4 class="mb-1 text-xl font-semibold">Kết nối nhanh chóng</h4>
+                    <p class="text-base leading-relaxed">
                       Chỉ 2 phút điền form – chúng tôi liên hệ ngay với gia sư phù hợp.
                     </p>
                   </div>
