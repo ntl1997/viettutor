@@ -23,6 +23,7 @@ import Register from '@/views/auth/Register.vue'
 import Landing from '@/views/Landing.vue'
 import Profile from '@/views/Profile.vue'
 import Index from '@/views/Index.vue'
+import TutorRequestForm from '@/views/TutorRequestForm.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -91,6 +92,12 @@ const router = createRouter({
       component: Index,
     },
     { path: '/:pathMatch(.*)*', redirect: '/' },
+
+    {
+      path: '/tutor-request',
+      name: 'TutorRequest',
+      component: TutorRequestForm,
+    }
   ],
 })
 
