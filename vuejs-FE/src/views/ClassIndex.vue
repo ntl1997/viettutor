@@ -43,23 +43,22 @@
   <div class="container mx-auto px-4 py-4">
     <div class="grid lg:grid-cols-4 px-4 py-4">
       <div class="rounded lg:col-span-3">
-        <div class="rounded p-4">
+        <!-- load from database -->
+        <div class="rounded p-4" v-for="(item, index) in classes" :key="index">
           <div class="max-w-3xl mx-auto p-6 bg-white rounded-xl shadow-md space-y-6">
             <div>
-              <h1 class="text-xl font-semibold text-gray-800">
-                Yêu cầu: Giao tiếp bằng Tiếng Hàn để học môn Tiếng Việt
-              </h1>
+              <h1 class="text-xl font-semibold text-gray-800">Yêu cầu: {{ item.requirements }}</h1>
             </div>
 
             <div class="grid gap-4 lg:grid-cols-2 lg:gap-8">
               <div class="rounded">
                 <p class="text-sm text-gray-500">
-                  Mã lớp: <span class="font-bold">24320</span> ·
+                  Mã lớp: <span class="font-bold">{{ item.id }}</span> ·
                   <a href="#" class="text-red-500 hover:underline">Xem thêm</a>
                 </p>
                 <div class="text-lg">
-                  <span class="font-semibold">Số học viên:</span>
-                  <span class="text-green-600 font-bold">1</span>
+                  <span class="font-semibold">Số học viên: </span>
+                  <span class="text-green-600 font-bold">{{ item.numberOfStudents }}</span>
                 </div>
               </div>
               <div class="rounded">
@@ -68,7 +67,7 @@
                     class="bg-green-500 text-white font-semibold px-4 py-2 rounded hover:bg-green-600"
                   >
                     <span class="text-yellow-500">Nhận lớp ngay </span>
-                    <span class="text-green-600 font-bold">(pending) </span>
+                    <span class="text-green-600 font-bold">({{ item.status }}) </span>
                   </button>
                 </div>
               </div>
@@ -76,37 +75,41 @@
 
             <div class="p-4 bg-gray-50 border rounded text-sm italic text-gray-600">
               <i class="fa-solid fa-person-chalkboard"></i>
-              <span class="font-semibold"> Yêu cầu gia sư giảng dạy: không có</span>
+              <span class="font-semibold">
+                Yêu cầu gia sư giảng dạy:
+                <span v-if="item.preferredTutor != null">{{ item.preferredTutor }}</span>
+                <span v-else>Không có</span>
+              </span>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-gray-700">
               <div class="flex items-center space-x-2">
                 <i class="fa fa-clock"></i>
-                <span>Tạo lúc: 11:07 06.05.2025</span>
+                <span>Tạo lúc: {{ item.createdAt }}</span>
               </div>
               <div class="flex items-center space-x-2">
                 <i class="fa fa-user"></i>
-                <span>Người đăng: 1</span>
+                <span>Người đăng: {{ item.postedBy.fullName }}</span>
               </div>
               <div class="flex items-center space-x-2">
                 <i class="fa fa-map-marker-alt"></i>
-                <span>Địa điểm: Long Biên, Hà Nội</span>
+                <span>Địa điểm: {{ item.location.name }}</span>
               </div>
               <div class="flex items-center space-x-2">
                 <i class="fa fa-calendar"></i>
-                <span>Lịch học: Tất cả các ngày 17h đến 20h</span>
+                <span>Lịch học: {{ item.schedule }}</span>
               </div>
               <div class="flex items-center space-x-2">
                 <i class="fa fa-book"></i>
-                <span>Môn học: Tiếng Việt</span>
+                <span>Môn học: {{ item.subject.name }}</span>
               </div>
               <div class="flex items-center space-x-2">
                 <i class="fa-solid fa-turn-up"></i>
-                <span>Trình độ: Tiếng Việt lớp 1</span>
+                <span>Trình độ: {{ item.level.name }}</span>
               </div>
               <div class="flex items-center space-x-2">
                 <i class="fas fa-laptop"></i>
-                <span>Hình thức học: Offline</span>
+                <span>Hình thức học: {{ item.learningMode }}</span>
               </div>
             </div>
           </div>
@@ -150,12 +153,13 @@
     </div>
 
     <!-- pagination -->
-    <ul class="flex justify-center gap-1 text-gray-900 dark:text-white">
+    <ul class="flex justify-center gap-1 text-gray-900">
       <li>
         <a
           href="#"
-          class="grid size-8 place-content-center rounded border border-gray-200 transition-colors hover:bg-gray-50 rtl:rotate-180 dark:border-gray-700 dark:hover:bg-gray-800"
+          class="grid size-8 place-content-center rounded border border-gray-200 transition-colors hover:bg-gray-50 rtl:rotate-180"
           aria-label="Previous page"
+          v-if="currentPage > 0"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -172,16 +176,16 @@
         </a>
       </li>
 
-      <li>
+      <li v-for="(page, index) in totalPages" :key="index">
         <a
-          href="#"
-          class="block size-8 rounded border border-gray-200 text-center text-sm/8 font-medium transition-colors hover:bg-gray-50 dark:border-gray-700 dark:hover:bg-gray-800"
+          href="`?page=${page}`"
+          class="block size-8 rounded border border-gray-200 text-center text-sm/8 font-medium transition-colors hover:bg-gray-50"
         >
-          1
+          {{ page }}
         </a>
       </li>
 
-      <li
+      <!-- <li
         class="block size-8 rounded border border-indigo-600 bg-indigo-600 text-center text-sm/8 font-medium text-white"
       >
         2
@@ -190,7 +194,7 @@
       <li>
         <a
           href="#"
-          class="block size-8 rounded border border-gray-200 text-center text-sm/8 font-medium transition-colors hover:bg-gray-50 dark:border-gray-700 dark:hover:bg-gray-800"
+          class="block size-8 rounded border border-gray-200 text-center text-sm/8 font-medium transition-colors hover:bg-gray-50"
         >
           3
         </a>
@@ -199,17 +203,18 @@
       <li>
         <a
           href="#"
-          class="block size-8 rounded border border-gray-200 text-center text-sm/8 font-medium transition-colors hover:bg-gray-50 dark:border-gray-700 dark:hover:bg-gray-800"
+          class="block size-8 rounded border border-gray-200 text-center text-sm/8 font-medium transition-colors hover:bg-gray-50"
         >
           4
         </a>
-      </li>
+      </li> -->
 
       <li>
         <a
           href="#"
-          class="grid size-8 place-content-center rounded border border-gray-200 transition-colors hover:bg-gray-50 rtl:rotate-180 dark:border-gray-700 dark:hover:bg-gray-800"
+          class="grid size-8 place-content-center rounded border border-gray-200 transition-colors hover:bg-gray-50 rtl:rotate-180"
           aria-label="Next page"
+          v-if="currentPage < totalPages - 1"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -237,6 +242,8 @@
 <script setup>
 import IndexNavbar from '@/components/Navbars/IndexNavbar.vue'
 import FooterComponent from '@/components/Footers/Footer.vue'
+import { onMounted, ref } from 'vue'
+import axios from 'axios'
 
 const popularClasses = [
   'Đàn Guitar',
@@ -260,6 +267,47 @@ const popularClasses = [
   'Tin học văn phòng',
   'Tiếng Việt cho người nước ngoài',
 ]
+
+const classes = ref([])
+const currentPage = ref(0)
+const totalPages = ref(0)
+const pageSize = ref(10)
+const subjectId = ref(0)
+const levelId = ref(0)
+const locationId = ref(0)
+const learningMode = ref('')
+const status = ref('')
+
+async function findAll(page = 0) {
+  try {
+    const response = await axios.get('http://localhost:8080/lop-moi', {
+      params: {
+        page: page,
+        size: pageSize.value,
+        subjectId: subjectId.value,
+        levelId: levelId.value,
+        locationId: locationId.value,
+        learningMode: learningMode.value,
+        status: status.value,
+      },
+    })
+    classes.value = response.data.content
+    totalPages.value = response.data.totalPages
+    currentPage.value = response.data.number
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+function changePage(page) {
+  if (page >= 1 && page <= totalPages.value) {
+    findAll(page)
+  }
+}
+
+onMounted(() => {
+  findAll()
+})
 </script>
 
 <style scoped>
