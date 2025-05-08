@@ -17,7 +17,7 @@ public interface ClassRepository extends JpaRepository<Class, Integer> {
 
     Page<Class> findByLevelAndStatus(Pageable pageable, String status, int levelId);
 
-    Page<Class> findByLocaltionAndStatus(Pageable pageable, String status, int locationId);
+    Page<Class> findByLocationAndStatus(Pageable pageable, String status, int locationId);
 
     Page<Class> findBylearningModeAndStatus(Pageable pageable, String status, String learningMode);
 }

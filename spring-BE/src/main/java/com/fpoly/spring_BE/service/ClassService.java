@@ -51,7 +51,7 @@ public class ClassService {
     public Page<Class> getClassesByLocationAndStatus(int page, int size, int locationId) {
         Sort sort = Sort.by("createdAt").descending();
         Pageable pageable = PageRequest.of(page, size, sort);
-        return classRepository.findByLocaltionAndStatus(pageable, "open", locationId);
+        return classRepository.findByLocationAndStatus(pageable, "open", locationId);
     }
 
     public Page<Class> getClassesByLearningModeAndStatus(int page, int size, String learningMode) {
@@ -67,5 +67,5 @@ public class ClassService {
     public void deleteClass(int id) {
         classRepository.deleteById(id);
     }
-    
+
 }
