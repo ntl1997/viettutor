@@ -41,6 +41,12 @@ public class ClassService {
         return classRepository.save(aClass);
     }
 
+    public Class changeStatus(int id, String status) {
+        Class aClass = classRepository.findById(id).get();
+        aClass.setStatus(status);
+        return classRepository.save(aClass);
+    }
+
     public void deleteClass(int id) {
         classRepository.deleteById(id);
     }

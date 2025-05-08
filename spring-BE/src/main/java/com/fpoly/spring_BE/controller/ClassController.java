@@ -1,10 +1,13 @@
 package com.fpoly.spring_BE.controller;
 
+import java.util.Optional;
+
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,6 +23,7 @@ public class ClassController {
         this.classService = classService;
     }
 
+    // đổ dữ liệu lên trang
     @GetMapping("/lop-moi")
     public ResponseEntity<Page<Class>> getClassesByFilters(
             @RequestParam(value = "page", defaultValue = "0") int page,
@@ -34,12 +38,25 @@ public class ClassController {
                     subjectId, levelId, locationId, learningMode, status);
 
             if (items.isEmpty()) {
-                return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
             }
 
-            return ResponseEntity.ok(items);
+            return new ResponseEntity<>(items, HttpStatus.OK);
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    // Gia sư nhận lớp
+    @PutMapping("/lop-moi/{id}")
+    public ResponseEntity<Class> assignClass(@PathVariable("id") int id) {
+        Optional<Class> existingItemOptional = classService.getClassById(id);
+        if (existingItemOptional.isPresent()) {
+            Class existingItem = existingItemOptional.get();
+            existingItem.setStatus("Assigned");
+            return new ResponseEntity<>(classService.saveClass(existingItem), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 
