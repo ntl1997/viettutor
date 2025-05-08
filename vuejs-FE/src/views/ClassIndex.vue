@@ -22,6 +22,11 @@
           <option value="hn">Hà Nội</option>
           <option value="dn">Đà Nẵng</option>
         </select>
+        <select class="px-4 py-2 rounded border border-gray-300 w-40">
+          <option>Hình thức học</option>
+          <option value="offline">Offline</option>
+          <option value="online">Online</option>
+        </select>
         <a
           class="inline-block rounded-sm bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:ring-3 focus:outline-hidden"
           href="#"
