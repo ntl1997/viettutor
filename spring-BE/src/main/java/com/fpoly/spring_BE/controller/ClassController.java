@@ -12,7 +12,6 @@ import com.fpoly.spring_BE.model.Class;
 import com.fpoly.spring_BE.service.ClassService;
 
 @RestController
-@RequestMapping("/lop-moi")
 public class ClassController {
 
     private final ClassService classService;
@@ -21,12 +20,18 @@ public class ClassController {
         this.classService = classService;
     }
 
-    @GetMapping
-    public ResponseEntity<Page<Class>> getAll(
+    @GetMapping("/lop-moi")
+    public ResponseEntity<Page<Class>> getClassesByFilters(
             @RequestParam(value = "page", defaultValue = "0") int page,
-            @RequestParam(value = "size", defaultValue = "10") int size) {
+            @RequestParam(value = "size", defaultValue = "10") int size,
+            @RequestParam(value = "subjectId", defaultValue = "0") int subjectId,
+            @RequestParam(value = "levelId", defaultValue = "0") int levelId,
+            @RequestParam(value = "locationId", defaultValue = "0") int locationId,
+            @RequestParam(value = "learningMode", defaultValue = "") String learningMode,
+            @RequestParam(value = "status", defaultValue = "open") String status) {
         try {
-            Page<Class> items = classService.getAllClasses(page, size);
+            Page<Class> items = classService.getClassesByFilters(page, size,
+                    subjectId, levelId, locationId, learningMode, status);
 
             if (items.isEmpty()) {
                 return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
