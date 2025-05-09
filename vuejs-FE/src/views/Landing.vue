@@ -677,9 +677,9 @@ import team4 from '@/assets/img/team-4-470x470.png'
 const newTutors = [
   { id: 1, name: 'Trần Lê Hoài Thương', avatar: 'https://randomuser.me/api/portraits/women/1.jpg' },
   { id: 2, name: 'Dương Minh Hoàng', avatar: 'https://randomuser.me/api/portraits/men/2.jpg' },
-  { id: 3, name: 'Tài khoản 434', avatar: 'https://randomuser.me/api/portraits/men/3.jpg' },
+  { id: 3, name: 'Nguyễn Văn Thực', avatar: 'https://randomuser.me/api/portraits/men/3.jpg' },
   { id: 4, name: 'Lê Chí Khang', avatar: 'https://randomuser.me/api/portraits/men/4.jpg' },
-  { id: 5, name: 'Tài khoản 6212', avatar: 'https://randomuser.me/api/portraits/men/5.jpg' },
+  { id: 5, name: 'Hoàng Gia Phú Cường', avatar: 'https://randomuser.me/api/portraits/men/5.jpg' },
   { id: 6, name: 'Nguyễn Tấn Vinh', avatar: 'https://randomuser.me/api/portraits/men/6.jpg' },
   { id: 7, name: 'Lê Bá Dũng', avatar: 'https://randomuser.me/api/portraits/men/7.jpg' },
   { id: 8, name: 'Đỗ Vũ Ngân Giao', avatar: 'https://randomuser.me/api/portraits/women/8.jpg' },
