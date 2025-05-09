@@ -5,35 +5,47 @@
   <section class="bg-cover bg-center py-6 mt-16 bg-custom-image">
     <div class="container mx-auto px-4">
       <div class="flex justify-center flex-wrap gap-4 items-center">
-        <select class="px-4 py-2 rounded border border-gray-300 w-40">
-          <option>Môn học</option>
-          <option value="student">Sinh viên</option>
-          <option value="teacher">Giáo viên</option>
-          <option value="graduated">Đã tốt nghiệp</option>
+        <select class="px-4 py-2 rounded border border-gray-300 w-40" v-model="subject">
+          <option :value="0">Môn học</option>
+          <option :value="0">Tất cả</option>
+          <option v-for="(item, index) in subjects" :key="index" :value="item.id">
+            {{ item.name }}
+          </option>
         </select>
-        <select class="px-4 py-2 rounded border border-gray-300 w-40">
-          <option>Trình độ</option>
-          <option value="student">Sinh viên</option>
-          <option value="teacher">Giáo viên</option>
-          <option value="graduated">Đã tốt nghiệp</option>
+        <select class="px-4 py-2 rounded border border-gray-300 w-40" v-model="level">
+          <option :value="0">Trình độ</option>
+          <option :value="0">Tất cả</option>
+          <option v-for="(item, index) in levels" :key="index" :value="item.id">
+            {{ item.name }}
+          </option>
         </select>
-        <select class="px-4 py-2 rounded border border-gray-300 w-40">
-          <option>Khu vực</option>
-          <option value="hcm">Hồ Chí Minh</option>
-          <option value="hn">Hà Nội</option>
-          <option value="dn">Đà Nẵng</option>
+        <select class="px-4 py-2 rounded border border-gray-300 w-40" v-model="location">
+          <option :value="0">Khu vực</option>
+          <option :value="0">Tất cả</option>
+          <option v-for="(item, index) in locations" :key="index" :value="item.id">
+            {{ item.name }}
+          </option>
         </select>
-        <select class="px-4 py-2 rounded border border-gray-300 w-40">
-          <option>Hình thức học</option>
-          <option value="offline">Offline</option>
-          <option value="online">Online</option>
+        <select class="px-4 py-2 rounded border border-gray-300 w-40" v-model="mode">
+          <option :value="''">Hình thức học</option>
+          <option :value="''">Tất cả</option>
+          <option :value="'offline'">Offline</option>
+          <option :value="'online'">Online</option>
         </select>
-        <a
+        <router-link
           class="inline-block rounded-sm bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:ring-3 focus:outline-hidden"
-          href="#"
+          :to="{
+            query: {
+              page: page,
+              subjectId: subject,
+              levelId: level,
+              locationId: location,
+              learningMode: mode,
+            },
+          }"
         >
           Tìm
-        </a>
+        </router-link>
       </div>
     </div>
   </section>
@@ -160,12 +172,19 @@
 
     <!-- pagination -->
     <ul class="flex justify-center gap-1 text-gray-900">
-      <li>
-        <a
-          :href="`?page=${currentPage - 1}`"
+      <li v-if="currentPage > 0">
+        <router-link
+          :to="{
+            query: {
+              page: currentPage - 1,
+              subjectId: subject,
+              levelId: level,
+              locationId: location,
+              learningMode: mode,
+            },
+          }"
           class="grid size-8 place-content-center rounded border border-gray-200 transition-colors hover:bg-gray-50 rtl:rotate-180"
           aria-label="Previous page"
-          v-if="currentPage > 0"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -179,24 +198,42 @@
               clip-rule="evenodd"
             />
           </svg>
-        </a>
+        </router-link>
       </li>
 
       <li v-for="(page, index) in totalPages" :key="index">
-        <a
-          :href="`?page=${page - 1}`"
-          class="block size-8 rounded border border-gray-200 text-center text-sm/8 font-medium transition-colors hover:bg-gray-50"
+        <router-link
+          :to="{
+            query: {
+              page: page - 1,
+              subjectId: subject,
+              levelId: level,
+              locationId: location,
+              learningMode: mode,
+            },
+          }"
+          :class="{
+            'block size-8 rounded border text-center text-sm/8 font-medium transition-colors hover:bg-gray-50': true,
+            'bg-indigo-600 text-white': currentPage === page - 1,
+          }"
         >
           {{ page }}
-        </a>
+        </router-link>
       </li>
 
-      <li>
-        <a
-          :href="`?page=${currentPage + 1}`"
+      <li v-if="currentPage < totalPages - 1">
+        <router-link
+          :to="{
+            query: {
+              page: currentPage + 1,
+              subjectId: subject,
+              levelId: level,
+              locationId: location,
+              learningMode: mode,
+            },
+          }"
           class="grid size-8 place-content-center rounded border border-gray-200 transition-colors hover:bg-gray-50 rtl:rotate-180"
           aria-label="Next page"
-          v-if="currentPage < totalPages - 1"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -210,7 +247,7 @@
               clip-rule="evenodd"
             />
           </svg>
-        </a>
+        </router-link>
       </li>
     </ul>
   </div>
@@ -224,13 +261,32 @@
 <script setup>
 import IndexNavbar from '@/components/Navbars/IndexNavbar.vue'
 import FooterComponent from '@/components/Footers/Footer.vue'
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 import axios from 'axios'
+import { useRoute } from 'vue-router'
+
+// Router
+const route = useRoute()
 
 // URL
 const url = import.meta.env.VITE_API_BASE_URL
 
-// Data phổ biến
+// Reactive data
+const classes = ref([])
+const subjects = ref([])
+const levels = ref([])
+const locations = ref([])
+const currentPage = ref(0)
+const totalPages = ref(0)
+const pageSize = ref(10)
+const subject = ref(0)
+const level = ref(0)
+const location = ref(0)
+const mode = ref('')
+const status = ref('')
+const filtersLoaded = ref(false)
+
+// dữ liệu mẫu lớp học phổ biến
 const popularClasses = [
   'Đàn Guitar',
   'Đàn Piano',
@@ -254,28 +310,17 @@ const popularClasses = [
   'Tiếng Việt cho người nước ngoài',
 ]
 
-// Reactive data
-const classes = ref([])
-const currentPage = ref(0)
-const totalPages = ref(0)
-const pageSize = ref(10)
-const subjectId = ref(0)
-const levelId = ref(0)
-const locationId = ref(0)
-const learningMode = ref('')
-const status = ref('')
-
-// Hàm lấy dữ liệu lớp từ API
+// Hàm lấy dữ liệu lớp học từ API
 async function getClasses() {
   try {
     const response = await axios.get(`${url}/lop-moi`, {
       params: {
         page: currentPage.value,
         size: pageSize.value,
-        subjectId: subjectId.value,
-        levelId: levelId.value,
-        locationId: locationId.value,
-        learningMode: learningMode.value,
+        subjectId: subject.value,
+        levelId: level.value,
+        locationId: location.value,
+        learningMode: mode.value,
         status: status.value,
       },
     })
@@ -287,14 +332,42 @@ async function getClasses() {
   }
 }
 
-// Hàm lấy dữ liệu khu vực từ API
+// Hàm lấy dữ liệu cho bộ lọc từ API
+async function getFilters() {
+  // nếu đã nạp dữ liệu bộ lọc thì không cần nạp lại
+  if (filtersLoaded.value) return
+  try {
+    const response = await axios.get(`${url}/filter-options`)
+    subjects.value = response.data.subjects
+    levels.value = response.data.levels
+    locations.value = response.data.locations
+    filtersLoaded.value = true
+  } catch (error) {
+    console.error('Lỗi khi lấy danh sách bộ lọc:', error)
+  }
+}
+
+// Theo dõi query param
+watch(
+  () => route.query,
+  (query) => {
+    currentPage.value = parseInt(query.page) || 0
+    subject.value = parseInt(query.subjectId) || 0
+    level.value = parseInt(query.levelId) || 0
+    location.value = parseInt(query.locationId) || 0
+    mode.value = query.learningMode || ''
+    getClasses()
+  },
+  { immediate: true },
+)
 
 // Khi component mount, đọc page từ URL → gọi API
 onMounted(() => {
-  const queryParams = new URLSearchParams(window.location.search)
-  const pageFromUrl = parseInt(queryParams.get('page'))
-  currentPage.value = isNaN(pageFromUrl) ? 0 : pageFromUrl
-  getClasses()
+  // const queryParams = new URLSearchParams(window.location.search)
+  // const pageFromUrl = parseInt(queryParams.get('page'))
+  // currentPage.value = isNaN(pageFromUrl) ? 0 : pageFromUrl
+  // getClasses()
+  getFilters()
 })
 </script>
 
