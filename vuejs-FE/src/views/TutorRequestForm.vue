@@ -1,27 +1,32 @@
 <template>
   <Navbar />
   <div class="max-w-4xl mx-auto p-6 bg-white rounded shadow space-y-8 mt-16">
-    <h2 class="text-2xl font-bold border-b pb-2">Mô tả yêu cầu tìm gia sư</h2>
+    <h2 class="text-2xl font-bold border-b pb-2 mb-4">Mô tả yêu cầu tìm gia sư</h2>
 
     <!-- Tổng quan yêu cầu -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <label>
+      <label class="font-semibold">
         Tóm tắt yêu cầu (tối đa 20 từ) *
-        <input v-model="summary" type="text" placeholder="Tóm tắt yêu cầu (tối đa 20 từ) *" class="input" />
+        <input
+          v-model="summary"
+          type="text"
+          placeholder="Tóm tắt yêu cầu (tối đa 20 từ) *"
+          class="input"
+        />
       </label>
-      <label>
+      <label class="font-semibold">
         Địa điểm dạy *
         <input v-model="location" type="text" placeholder="Địa điểm dạy *" class="input" />
       </label>
-      <label>
+      <label class="font-semibold">
         Số học viên *
         <input v-model="studentCount" type="number" placeholder="Số học viên *" class="input" />
       </label>
-      <label>
+      <label class="font-semibold">
         Ngày bắt đầu *
         <input v-model="startDate" type="date" placeholder="Ngày bắt đầu *" class="input" />
       </label>
-      <label>
+      <label class="font-semibold">
         Thời lượng mỗi buổi *
         <select v-model="sessionTime" class="input">
           <option>60 phút</option>
@@ -29,7 +34,7 @@
           <option>120 phút</option>
         </select>
       </label>
-      <label>
+      <label class="font-semibold">
         Môn học *
         <div class="relative mt-2">
           <button
@@ -41,7 +46,12 @@
               {{ selectedSubjects.length > 0 ? selectedSubjects.join(', ') : 'Chọn môn học' }}
             </span>
             <span class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
-              <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <svg
+                class="h-5 w-5 text-gray-400"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+              >
                 <path
                   fill-rule="evenodd"
                   d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.72-3.72a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 01.02-1.06z"
@@ -81,11 +91,22 @@
     </div>
 
     <!-- Giới tính học viên -->
-    <div class="space-x-4">
-      <span>Giới tính học viên:</span>
-      <label><input type="radio" value="Nam" v-model="studentGender" /> Nam</label>
-      <label><input type="radio" value="Nữ" v-model="studentGender" /> Nữ</label>
-      <label><input type="radio" value="Cả hai" v-model="studentGender" /> Có cả Nam và Nữ</label>
+    <div>
+      <label class="block mb-2 font-semibold">Giới tính học viên</label>
+      <div class="flex space-x-2">
+        <button
+          v-for="gender in ['Nam', 'Nữ', 'Cả hai']"
+          :key="gender"
+          :class="{
+            'px-4 py-2 rounded': true,
+            'bg-orange-500 text-white': studentGender === gender,
+            'bg-orange-100 text-orange-700 hover:bg-orange-200': studentGender !== gender,
+          }"
+          @click="studentGender = gender"
+        >
+          {{ gender }}
+        </button>
+      </div>
     </div>
 
     <!-- Thời gian học -->
@@ -94,14 +115,15 @@
       <div class="overflow-x-auto">
         <div class="time-schedule">
           <div v-for="(day, dayIndex) in days" :key="dayIndex" class="day-row">
-            <div class="day-label">{{ day }}</div>
-            <div class="hours">
+            <div class="day-label mr-2 whitespace-nowrap">{{ day }}</div>
+            <div class="hours" style="gap: 2px">
               <button
                 v-for="hour in 24"
                 :key="hour"
                 class="hour-button"
                 :class="{ active: selectedHours[dayIndex]?.includes(hour) }"
                 @click="toggleHourSelection(dayIndex, hour)"
+                style="padding: 2px; font-size: 12px"
               >
                 {{ hour }}
               </button>
@@ -113,8 +135,8 @@
     </div>
 
     <!-- Yêu cầu gia sư -->
-    <h2 class="text-xl font-semibold border-b pb-2">Yêu cầu gia sư</h2>
-    <div class="grid grid-cols-1 md:grid-cols-5 gap-4 items-center">
+    <h2 class="text-xl font-semibold border-b pb-2 mb-4">Yêu cầu gia sư</h2>
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
       <div>
         <label class="block font-medium mb-1">Giới tính</label>
         <select v-model="tutorGender" class="input">
@@ -138,7 +160,9 @@
       <div>
         <label class="block font-medium mb-1">Theo</label>
         <select v-model="feeType" class="input">
+          <option>Giờ</option>
           <option>Buổi</option>
+          <option>Tuần</option>
           <option>Tháng</option>
         </select>
       </div>
@@ -147,73 +171,83 @@
         <input v-model="sessionsPerWeek" type="text" placeholder="vd: 3" class="input" />
       </div>
     </div>
-    <div>
+    <div class="mt-4">
       <label class="block font-medium mb-1">Mô tả chi tiết *</label>
-      <textarea v-model="description" rows="4" placeholder="Mô tả chi tiết" class="input resize-none"></textarea>
+      <textarea
+        v-model="description"
+        rows="4"
+        placeholder="Mô tả chi tiết"
+        class="input resize-none"
+      ></textarea>
     </div>
-    <div>
+    <div class="mt-4">
       <label class="block font-medium mb-1">CODE khuyến mãi</label>
       <input v-model="promoCode" type="text" placeholder="code" class="input" />
     </div>
-    <div class="text-green-500 text-xl font-bold text-center">
-      90,000đ/buổi
-    </div>
-    <div>
-      <button class="bg-green-500 text-white px-6 py-2 rounded hover:bg-green-600">
-        Đăng yêu cầu
-      </button>
+    <div class="text-green-500 text-xl font-bold text-center mt-4">90,000đ/buổi</div>
+    <div class="mt-4 flex justify-center">
+      <a
+        class="group inline-block rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-[2px] hover:text-white focus:ring-3 focus:outline-hidden"
+        href="#"
+      >
+        <span
+          class="block rounded-full bg-white px-8 py-3 text-sm font-medium group-hover:bg-transparent"
+        >
+          Đăng yêu cầu
+        </span>
+      </a>
     </div>
   </div>
   <FooterComponent class="mt-16" />
 </template>
 
 <script setup>
-import Navbar from "@/components/Navbars/AuthNavbar.vue";
-import FooterComponent from "@/components/Footers/Footer.vue";
-import { ref } from 'vue';
+import Navbar from '@/components/Navbars/AuthNavbar.vue'
+import FooterComponent from '@/components/Footers/Footer.vue'
+import { ref } from 'vue'
 
-const summary = ref('');
-const location = ref('');
-const studentCount = ref(1);
-const startDate = ref('');
-const sessionTime = ref('');
-const selectedSubjects = ref([]);
+const summary = ref('')
+const location = ref('')
+const studentCount = ref(1)
+const startDate = ref('')
+const sessionTime = ref('')
+const selectedSubjects = ref([])
 const subjectOptions = ref([
   { id: 303, text: '2D' },
   { id: 307, text: '3D Max' },
   { id: 310, text: 'Photoshop' },
   { id: 315, text: 'Illustrator' },
-]); // Danh sách các môn học có thể chọn
-const isDropdownOpen = ref(false);
-const studentGender = ref('Nam');
-const tutorGender = ref('Tùy');
-const level = ref('Sinh viên');
-const fee = ref('');
-const feeType = ref('Buổi');
-const sessionsPerWeek = ref('');
-const description = ref('');
-const promoCode = ref('');
-const days = ref(['Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7', 'Chủ nhật']);
-const selectedHours = ref(Array(days.value.length).fill([]));
+]) // Danh sách các môn học có thể chọn
+const isDropdownOpen = ref(false)
+const studentGender = ref('Nam')
+const tutorGender = ref('Tùy')
+const level = ref('Sinh viên')
+const fee = ref('')
+const feeType = ref('Buổi')
+const sessionsPerWeek = ref('')
+const description = ref('')
+const promoCode = ref('')
+const days = ref(['Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7', 'Chủ nhật'])
+const selectedHours = ref(Array(days.value.length).fill([]))
 
 function toggleDropdown() {
-  isDropdownOpen.value = !isDropdownOpen.value;
+  isDropdownOpen.value = !isDropdownOpen.value
 }
 
 function toggleSubject(subject) {
   if (selectedSubjects.value.includes(subject)) {
-    selectedSubjects.value = selectedSubjects.value.filter((s) => s !== subject);
+    selectedSubjects.value = selectedSubjects.value.filter((s) => s !== subject)
   } else {
-    selectedSubjects.value.push(subject);
+    selectedSubjects.value.push(subject)
   }
 }
 
 function toggleHourSelection(dayIndex, hour) {
-  const hours = selectedHours.value[dayIndex];
+  const hours = selectedHours.value[dayIndex]
   if (hours.includes(hour)) {
-    selectedHours.value[dayIndex] = hours.filter(h => h !== hour);
+    selectedHours.value[dayIndex] = hours.filter((h) => h !== hour)
   } else {
-    selectedHours.value[dayIndex] = [...hours, hour];
+    selectedHours.value[dayIndex] = [...hours, hour]
   }
 }
 </script>
