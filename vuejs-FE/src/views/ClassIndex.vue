@@ -41,7 +41,6 @@
 
   <div class="container mx-auto px-4 py-4">
     <!-- content -->
-
     <div class="grid lg:grid-cols-4 px-4 py-4">
       <div class="rounded lg:col-span-3">
         <!-- load from database -->
@@ -166,7 +165,7 @@
     <ul class="flex justify-center gap-1 text-gray-900">
       <li>
         <a
-          href="#"
+          :href="`?page=${currentPage - 1}`"
           class="grid size-8 place-content-center rounded border border-gray-200 transition-colors hover:bg-gray-50 rtl:rotate-180"
           aria-label="Previous page"
           v-if="currentPage > 0"
@@ -188,40 +187,16 @@
 
       <li v-for="(page, index) in totalPages" :key="index">
         <a
-          href="`?page=${page}`"
+          :href="`?page=${page - 1}`"
           class="block size-8 rounded border border-gray-200 text-center text-sm/8 font-medium transition-colors hover:bg-gray-50"
         >
           {{ page }}
         </a>
       </li>
 
-      <!-- <li
-        class="block size-8 rounded border border-indigo-600 bg-indigo-600 text-center text-sm/8 font-medium text-white"
-      >
-        2
-      </li>
-
       <li>
         <a
-          href="#"
-          class="block size-8 rounded border border-gray-200 text-center text-sm/8 font-medium transition-colors hover:bg-gray-50"
-        >
-          3
-        </a>
-      </li>
-
-      <li>
-        <a
-          href="#"
-          class="block size-8 rounded border border-gray-200 text-center text-sm/8 font-medium transition-colors hover:bg-gray-50"
-        >
-          4
-        </a>
-      </li> -->
-
-      <li>
-        <a
-          href="#"
+          :href="`?page=${currentPage + 1}`"
           class="grid size-8 place-content-center rounded border border-gray-200 transition-colors hover:bg-gray-50 rtl:rotate-180"
           aria-label="Next page"
           v-if="currentPage < totalPages - 1"
@@ -255,6 +230,7 @@ import FooterComponent from '@/components/Footers/Footer.vue'
 import { onMounted, ref } from 'vue'
 import axios from 'axios'
 
+// Data phổ biến
 const popularClasses = [
   'Đàn Guitar',
   'Đàn Piano',
@@ -278,21 +254,25 @@ const popularClasses = [
   'Tiếng Việt cho người nước ngoài',
 ]
 
+// Reactive data
 const classes = ref([])
 const currentPage = ref(0)
 const totalPages = ref(0)
 const pageSize = ref(10)
+
+// Bộ lọc (tạm thời chưa dùng search nhưng có thể bind vào sau)
 const subjectId = ref(0)
 const levelId = ref(0)
 const locationId = ref(0)
 const learningMode = ref('')
 const status = ref('')
 
-async function findAll(page = 0) {
+// Hàm lấy dữ liệu lớp từ API
+async function getClasses() {
   try {
     const response = await axios.get('http://localhost:8080/lop-moi', {
       params: {
-        page: page,
+        page: currentPage.value,
         size: pageSize.value,
         subjectId: subjectId.value,
         levelId: levelId.value,
@@ -305,18 +285,19 @@ async function findAll(page = 0) {
     totalPages.value = response.data.totalPages
     currentPage.value = response.data.number
   } catch (error) {
-    console.log(error)
+    console.error('Lỗi khi lấy danh sách lớp:', error)
   }
 }
 
-function changePage(page) {
-  if (page >= 1 && page <= totalPages.value) {
-    findAll(page)
-  }
-}
+// Hàm lấy dữ liệu trình độ từ API
+// Hàm lấy dữ liệu khu vực từ API
 
+// Khi component mount, đọc page từ URL → gọi API
 onMounted(() => {
-  findAll()
+  const queryParams = new URLSearchParams(window.location.search)
+  const pageFromUrl = parseInt(queryParams.get('page'))
+  currentPage.value = isNaN(pageFromUrl) ? 0 : pageFromUrl
+  getClasses()
 })
 </script>
 
