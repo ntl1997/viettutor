@@ -319,9 +319,9 @@
 
         <div class="container mx-auto px-4">
           <div class="container mx-auto py-8">
-            <div class="flex flex-col md:flex-row md:space-x-6">
+            <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row md:gap-32 md:w-full">
               <!-- Gia sư Mới -->
-              <div class="w-full md:w-1/3 mb-8 md:mb-0">
+              <div class="mb-8 md:mb-0 md:w-3/12 md:pr-10">
                 <h2 class="text-xl font-bold mb-4 border-b-2 border-green-500 inline-block">
                   Gia sư <span style="color: green">Mới</span>
                 </h2>
@@ -332,14 +332,13 @@
                     :key="tutor.id"
                   >
                     <img :src="tutor.avatar" class="w-8 h-8 rounded-full" alt="avatar" />
-
                     <span class="text-gray-800">{{ tutor.name }}</span>
                   </li>
                 </ul>
               </div>
 
               <!-- Gia sư nổi bật -->
-              <div class="w-full md:w-1/3 mb-8 md:mb-0">
+              <div class="mb-8 md:mb-0 md:w-3/12 md:px-10">
                 <h2 class="text-xl font-bold mb-4 border-b-2 border-green-500 inline-block">
                   Gia sư nổi bật<span style="color: green"> Tháng 05</span>
                 </h2>
@@ -363,7 +362,7 @@
               </div>
 
               <!-- Lớp mới -->
-              <div class="w-full md:w-1/3">
+              <div class="md:w-6/12 md:pl-10">
                 <h2 class="text-xl font-bold mb-4 border-b-2 border-green-500 inline-block">
                   Lớp <span style="color: green">Mới</span>
                 </h2>
