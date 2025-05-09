@@ -1,8 +1,7 @@
 <template>
   <Navbar />
   <div class="max-w-4xl mx-auto p-6 bg-white rounded shadow space-y-8 mt-16">
-    <h2 class="text-2xl font-bold border-b pb-2 mb-4">Mô tả yêu cầu tìm gia sư</h2>
-
+    <h2 class="text-xl font-semibold border-b pb-2 mb-4">Mô tả yêu cầu tìm gia sư</h2>
     <!-- Tổng quan yêu cầu -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <label class="font-semibold">
