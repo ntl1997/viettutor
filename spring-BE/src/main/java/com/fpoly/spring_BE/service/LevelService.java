@@ -16,7 +16,7 @@ public class LevelService {
         this.levelRepository = levelRepository;
     }
 
-    public List<Level> getAlllevels() {
+    public List<Level> getAllLevels() {
         return levelRepository.findAll();
     }
 

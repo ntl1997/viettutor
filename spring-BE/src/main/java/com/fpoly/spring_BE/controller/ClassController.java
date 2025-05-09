@@ -1,5 +1,7 @@
 package com.fpoly.spring_BE.controller;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.data.domain.Page;
@@ -13,14 +15,27 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fpoly.spring_BE.model.Class;
 import com.fpoly.spring_BE.service.ClassService;
+import com.fpoly.spring_BE.service.LevelService;
+import com.fpoly.spring_BE.service.LocationService;
+import com.fpoly.spring_BE.service.SubjectService;
 
 @RestController
 public class ClassController {
 
     private final ClassService classService;
+    private final SubjectService subjectService;
+    private final LevelService levelService;
+    private final LocationService locationService;
 
-    public ClassController(ClassService classService) {
+    public ClassController(
+            ClassService classService,
+            SubjectService subjectService,
+            LevelService levelService,
+            LocationService locationService) {
         this.classService = classService;
+        this.subjectService = subjectService;
+        this.levelService = levelService;
+        this.locationService = locationService;
     }
 
     // đổ dữ liệu lên trang
@@ -45,6 +60,15 @@ public class ClassController {
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
+    }
+
+    @GetMapping("/filter-options")
+    public ResponseEntity<Map<String, Object>> getFilterOptions() {
+        Map<String, Object> response = new HashMap<>();
+        response.put("subjects", subjectService.getAllSubjects());
+        response.put("levels", levelService.getAllLevels());
+        response.put("locations", locationService.getAllLocations());
+        return ResponseEntity.ok(response);
     }
 
     // Gia sư nhận lớp
