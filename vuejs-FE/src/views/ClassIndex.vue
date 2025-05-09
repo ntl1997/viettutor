@@ -10,7 +10,7 @@
           placeholder="Môn học"
           class="px-4 py-2 rounded border border-gray-300 w-40"
         />
-        <select class="px-4 py-2 rounded border border-gray-300 w-36">
+        <select class="px-4 py-2 rounded border border-gray-300 w-40">
           <option>Trình độ</option>
           <option value="student">Sinh viên</option>
           <option value="teacher">Giáo viên</option>
@@ -82,42 +82,38 @@
               </span>
             </div>
 
-            <div class="grid sm:grid-cols-2 gap-4 text-sm text-gray-700">
-              <div class="grid grid-cols-1 gap-4 text-sm text-gray-700">
-                <div class="flex items-center space-x-2">
+            <div class="grid lg:grid-cols-2 text-sm text-gray-700">
+              <div class="grid-cols-1 gap-4">
+                <div class="flex items-center space-x-2 py-2">
                   <i class="fa fa-clock"></i>
                   <p><span class="font-semibold">Tạo lúc: </span>{{ item.createdAt }}</p>
                 </div>
-                <div class="flex items-center space-x-2">
+                <div class="flex items-center space-x-2 py-2">
                   <i class="fa fa-user"></i>
                   <p><span class="font-semibold">Người đăng: </span>{{ item.postedBy.fullName }}</p>
                 </div>
-                <div class="flex items-center space-x-2">
+                <div class="flex items-center space-x-2 py-2">
                   <i class="fa fa-map-marker-alt"></i>
                   <p><span class="font-semibold">Địa điểm: </span>{{ item.location.name }}</p>
                 </div>
-                <div class="flex items-center space-x-2">
+                <div class="flex items-center space-x-2 py-2">
                   <i class="fa fa-calendar"></i>
                   <p><span class="font-semibold">Lịch học: </span>{{ item.schedule }}</p>
                 </div>
               </div>
 
-              <div class="grid grid-cols-1 gap-4 text-sm text-gray-700">
-                <div class="flex items-center space-x-2">
+              <div class="grid-cols-1 gap-4">
+                <div class="flex items-center space-x-2 py-2">
                   <i class="fa fa-book"></i>
                   <p><span class="font-semibold">Môn học: </span>{{ item.subject.name }}</p>
                 </div>
-                <div class="flex items-center space-x-2">
+                <div class="flex items-center space-x-2 py-2">
                   <i class="fa-solid fa-turn-up"></i>
                   <p><span class="font-semibold">Trình độ: </span>{{ item.level.name }}</p>
                 </div>
-                <div class="flex items-center space-x-2">
+                <div class="flex items-center space-x-2 py-2">
                   <i class="fas fa-laptop"></i>
                   <p><span class="font-semibold">Hình thức học: </span>{{ item.learningMode }}</p>
-                </div>
-                <div class="flex items-center space-x-2">
-                  <i></i>
-                  <p><span class="font-semibold"></span></p>
                 </div>
               </div>
             </div>
@@ -289,9 +285,6 @@ async function getClasses() {
     console.error('Lỗi khi lấy danh sách lớp:', error)
   }
 }
-
-// Hàm lấy dữ liệu trình độ từ API
-async function getSubjects() {}
 
 // Hàm lấy dữ liệu khu vực từ API
 
