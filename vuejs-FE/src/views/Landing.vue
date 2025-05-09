@@ -323,7 +323,7 @@
               <!-- Gia sư Mới -->
               <div class="w-full md:w-1/3 mb-8 md:mb-0">
                 <h2 class="text-xl font-bold mb-4 border-b-2 border-green-500 inline-block">
-                  Gia sư <span class="text-green-500" style="color: green">Mới</span>
+                  Gia sư <span style="color: green">Mới</span>
                 </h2>
                 <ul class="divide-y divide-dashed divide-gray-300">
                   <li
