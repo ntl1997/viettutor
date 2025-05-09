@@ -350,17 +350,14 @@
                     :key="tutor.id"
                   >
                     <div class="flex items-center space-x-2">
-                      <img
-                        src="https://via.placeholder.com/32"
-                        class="w-8 h-8 rounded-full"
-                        alt="avatar"
-                      />
+                      <img :src="tutor.avatar" class="w-8 h-8 rounded-full" alt="avatar" />
                       <span class="text-gray-800">{{ tutor.name }}</span>
                     </div>
                     <span
                       class="rounded-full bg-gray-400 text-white text-xs w-5 h-5 flex items-center justify-center"
-                      >{{ tutor.badge }}</span
                     >
+                      {{ tutor.badge }}
+                    </span>
                   </li>
                 </ul>
               </div>
