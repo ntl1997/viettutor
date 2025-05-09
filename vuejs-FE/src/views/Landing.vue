@@ -319,15 +319,17 @@
 
         <div class="container mx-auto px-4">
           <div class="container mx-auto py-8">
-            <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row md:gap-32 md:w-full">
+            <div
+              class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row md:items-start md:gap-32 md:w-full"
+            >
               <!-- Gia sư Mới -->
-              <div class="mb-8 md:mb-0 md:w-3/12 md:pr-10">
+              <div class="md:w-3/12 md:pr-10">
                 <h2 class="text-xl font-bold mb-4 border-b-2 border-green-500 inline-block">
                   Gia sư <span style="color: green">Mới</span>
                 </h2>
                 <ul class="divide-y divide-dashed divide-gray-300">
                   <li
-                    class="flex items-center space-x-4 py-2"
+                    class="flex items-center space-x-4 py-2 min-h-[48px]"
                     v-for="tutor in newTutors.slice(0, 10)"
                     :key="tutor.id"
                   >
@@ -338,13 +340,13 @@
               </div>
 
               <!-- Gia sư nổi bật -->
-              <div class="mb-8 md:mb-0 md:w-3/12 md:px-10">
+              <div class="md:w-3/12 md:px-10">
                 <h2 class="text-xl font-bold mb-4 border-b-2 border-green-500 inline-block">
                   Gia sư nổi bật<span style="color: green"> Tháng 05</span>
                 </h2>
                 <ul class="divide-y divide-dashed divide-gray-300">
                   <li
-                    class="flex items-center justify-between py-2"
+                    class="flex items-center justify-between py-2 min-h-[48px]"
                     v-for="tutor in highlightedTutors.slice(0, 10)"
                     :key="tutor.id"
                   >
@@ -367,9 +369,17 @@
                   Lớp <span style="color: green">Mới</span>
                 </h2>
                 <ul class="divide-y divide-dashed divide-gray-300">
-                  <li class="py-2" v-for="classItem in newClasses.slice(0, 10)" :key="classItem.id">
-                    <span class="font-semibold text-gray-800">{{ classItem.id }}</span> -
-                    <span class="text-gray-600">{{ classItem.description }}</span>
+                  <li
+                    class="flex items-center space-x-4 py-2 min-h-[48px]"
+                    v-for="classItem in newClasses.slice(0, 10)"
+                    :key="classItem.id"
+                  >
+                    <span class="text-sm font-semibold text-gray-800 w-20 shrink-0">
+                      {{ classItem.id }}
+                    </span>
+                    <span class="text-sm text-gray-600 truncate">
+                      {{ classItem.description }}
+                    </span>
                   </li>
                 </ul>
               </div>
