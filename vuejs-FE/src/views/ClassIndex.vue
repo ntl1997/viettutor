@@ -5,11 +5,6 @@
   <section class="bg-cover bg-center py-6 mt-16 bg-custom-image">
     <div class="container mx-auto px-4">
       <div class="flex justify-center flex-wrap gap-4 items-center">
-        <input
-          type="text"
-          placeholder="Môn học"
-          class="px-4 py-2 rounded border border-gray-300 w-40"
-        />
         <select class="px-4 py-2 rounded border border-gray-300 w-40">
           <option>Môn học</option>
           <option value="student">Sinh viên</option>
