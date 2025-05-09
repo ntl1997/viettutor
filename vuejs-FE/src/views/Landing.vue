@@ -349,7 +349,7 @@
                     v-for="tutor in highlightedTutors.slice(0, 10)"
                     :key="tutor.id"
                   >
-                    <div class="flex items-center space-x-2">
+                    <div class="flex items-center space-x-4">
                       <img :src="tutor.avatar" class="w-8 h-8 rounded-full" alt="avatar" />
                       <span class="text-gray-800">{{ tutor.name }}</span>
                     </div>
