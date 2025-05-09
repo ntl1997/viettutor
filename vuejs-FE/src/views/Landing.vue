@@ -319,35 +319,47 @@
 
         <div class="container mx-auto px-4">
           <div class="container mx-auto py-8">
-            <div class="flex flex-wrap -mx-4">
+            <div class="flex flex-col md:flex-row md:space-x-6">
               <!-- Gia sư Mới -->
-              <div class="w-full md:w-1/3 px-4">
-                <h2 class="text-xl font-bold mb-4">
-                  Gia sư <span class="text-green-500">{{ newTutorsLabel }}</span>
+              <div class="w-full md:w-1/3 mb-8 md:mb-0">
+                <h2 class="text-xl font-bold mb-4 border-b-2 border-green-500 inline-block">
+                  Gia sư <span class="text-green-500">Mới</span>
                 </h2>
-                <ul class="space-y-3">
+                <ul class="divide-y divide-dashed divide-gray-300">
                   <li
-                    class="flex items-center justify-between border-b pb-2"
-                    v-for="tutor in newTutors"
+                    class="flex items-center space-x-2 py-2"
+                    v-for="tutor in newTutors.slice(0, 10)"
                     :key="tutor.id"
                   >
-                    <span>{{ tutor.name }}</span>
+                    <img
+                      src="https://via.placeholder.com/32"
+                      class="w-8 h-8 rounded-full"
+                      alt="avatar"
+                    />
+                    <span class="text-gray-800">{{ tutor.name }}</span>
                   </li>
                 </ul>
               </div>
 
               <!-- Gia sư nổi bật -->
-              <div class="w-full md:w-1/3 px-4">
-                <h2 class="text-xl font-bold mb-4">
-                  Gia sư nổi bật<span class="text-green-500"> {{ highlightedMonth }}</span>
+              <div class="w-full md:w-1/3 mb-8 md:mb-0">
+                <h2 class="text-xl font-bold mb-4 border-b-2 border-green-500 inline-block">
+                  Gia sư nổi bật<span class="text-green-500"> Tháng 05</span>
                 </h2>
-                <ul class="space-y-3">
+                <ul class="divide-y divide-dashed divide-gray-300">
                   <li
-                    class="flex items-center justify-between border-b pb-2"
-                    v-for="tutor in highlightedTutors"
+                    class="flex items-center justify-between py-2"
+                    v-for="tutor in highlightedTutors.slice(0, 10)"
                     :key="tutor.id"
                   >
-                    <span>{{ tutor.name }}</span>
+                    <div class="flex items-center space-x-2">
+                      <img
+                        src="https://via.placeholder.com/32"
+                        class="w-8 h-8 rounded-full"
+                        alt="avatar"
+                      />
+                      <span class="text-gray-800">{{ tutor.name }}</span>
+                    </div>
                     <span
                       class="rounded-full bg-gray-400 text-white text-xs w-5 h-5 flex items-center justify-center"
                       >{{ tutor.badge }}</span
@@ -357,14 +369,14 @@
               </div>
 
               <!-- Lớp mới -->
-              <div class="w-full md:w-1/3 px-4">
-                <h2 class="text-xl font-bold mb-4">
-                  Lớp <span class="text-green-500">{{ newClassesLabel }}</span>
+              <div class="w-full md:w-1/3">
+                <h2 class="text-xl font-bold mb-4 border-b-2 border-green-500 inline-block">
+                  Lớp <span class="text-green-500">Mới</span>
                 </h2>
-                <ul class="space-y-3">
-                  <li class="border-b pb-2" v-for="classItem in newClasses" :key="classItem.id">
-                    <span class="font-semibold">{{ classItem.id }}</span> -
-                    {{ classItem.description }}
+                <ul class="divide-y divide-dashed divide-gray-300">
+                  <li class="py-2" v-for="classItem in newClasses.slice(0, 10)" :key="classItem.id">
+                    <span class="font-semibold text-gray-800">{{ classItem.id }}</span> -
+                    <span class="text-gray-600">{{ classItem.description }}</span>
                   </li>
                 </ul>
               </div>
@@ -665,6 +677,45 @@ import team2 from '@/assets/img/team-2-800x800.jpg'
 import team3 from '@/assets/img/team-3-800x800.jpg'
 import team4 from '@/assets/img/team-4-470x470.png'
 
+const newTutors = [
+  { id: 1, name: 'Trần Lê Hoài Thương' },
+  { id: 2, name: 'Dương Minh Hoàng' },
+  { id: 3, name: 'Tài khoản 434' },
+  { id: 4, name: 'Lê Chí Khang' },
+  { id: 5, name: 'Tài khoản 6212' },
+  { id: 6, name: 'Nguyễn Tấn Vinh' },
+  { id: 7, name: 'Lê Bá Dũng' },
+  { id: 8, name: 'Đỗ Vũ Ngân Giao' },
+  { id: 9, name: 'tuyetnhung' },
+  { id: 10, name: 'Mai Tùng Lâm' },
+]
+
+const highlightedTutors = [
+  { id: 1, name: 'Ngô Quang Long', badge: '1' },
+  { id: 2, name: 'Nguyễn Bích Loan', badge: '1' },
+  { id: 3, name: 'Phạm Thị Thơm', badge: '1' },
+  { id: 4, name: 'Mai Đức Hưng', badge: '1' },
+  { id: 5, name: 'Nguyễn Xuân Huy', badge: '1' },
+  { id: 6, name: 'Huỳnh Duyên', badge: '1' },
+  { id: 7, name: 'Nguyễn Thị Lãnh', badge: '1' },
+  { id: 8, name: 'Nguyễn Diệu Hồng', badge: '1' },
+  { id: 9, name: 'Đoàn Anh Thư', badge: '1' },
+  { id: 10, name: 'Phạm Thị Minh', badge: '1' },
+]
+
+const newClasses = [
+  { id: '24334', description: 'Cần gia sư học thiết kế đồ họa tại Tân Uyên, Bình Dương' },
+  { id: '24329', description: 'Cần gia sư môn Tiếng Anh lớp 12 tại Nhà Bè, Hồ Chí Minh' },
+  { id: '17737', description: 'Cần gia sư môn Tiếng Trung tại quận 5, Hồ Chí Minh' },
+  { id: '23711', description: 'Cần gia sư môn Piano tại Đức Hòa, Long An' },
+  { id: '24325', description: 'Cần gia sư môn Corel tại quận 7, Hồ Chí Minh' },
+  { id: '24324', description: 'Cần gia sư môn Guitar tại Diên Khánh, Khánh Hòa' },
+  { id: '24322', description: 'Tìm Gia sư kèm toán ôn thi THPTQG tại Quy Nhơn, Tỉnh Bình Định' },
+  { id: '24320', description: 'Cần gia sư môn Tiếng Việt cho người Hàn tại Gia Lâm, Hà Nội' },
+  { id: '24316', description: 'Cần gia sư môn Toán lớp 9 tại Liên Chiểu, Đà Nẵng' },
+  { id: '21236', description: 'Cần gia sư môn Violin tại Hóc Môn, Hồ Chí Minh' },
+]
+
 export default {
   data() {
     return {
@@ -672,6 +723,9 @@ export default {
       team2,
       team3,
       team4,
+      newTutors,
+      highlightedTutors,
+      newClasses,
     }
   },
   components: {
