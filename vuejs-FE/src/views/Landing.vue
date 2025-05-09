@@ -688,16 +688,66 @@ const newTutors = [
 ]
 
 const highlightedTutors = [
-  { id: 1, name: 'Ngô Quang Long', badge: '1' },
-  { id: 2, name: 'Nguyễn Bích Loan', badge: '1' },
-  { id: 3, name: 'Phạm Thị Thơm', badge: '1' },
-  { id: 4, name: 'Mai Đức Hưng', badge: '1' },
-  { id: 5, name: 'Nguyễn Xuân Huy', badge: '1' },
-  { id: 6, name: 'Huỳnh Duyên', badge: '1' },
-  { id: 7, name: 'Nguyễn Thị Lãnh', badge: '1' },
-  { id: 8, name: 'Nguyễn Diệu Hồng', badge: '1' },
-  { id: 9, name: 'Đoàn Anh Thư', badge: '1' },
-  { id: 10, name: 'Phạm Thị Minh', badge: '1' },
+  {
+    id: 1,
+    name: 'Ngô Quang Long',
+    badge: '1',
+    avatar: 'https://randomuser.me/api/portraits/men/11.jpg',
+  },
+  {
+    id: 2,
+    name: 'Nguyễn Bích Loan',
+    badge: '1',
+    avatar: 'https://randomuser.me/api/portraits/women/12.jpg',
+  },
+  {
+    id: 3,
+    name: 'Phạm Thị Thơm',
+    badge: '1',
+    avatar: 'https://randomuser.me/api/portraits/women/13.jpg',
+  },
+  {
+    id: 4,
+    name: 'Mai Đức Hưng',
+    badge: '1',
+    avatar: 'https://randomuser.me/api/portraits/men/14.jpg',
+  },
+  {
+    id: 5,
+    name: 'Nguyễn Xuân Huy',
+    badge: '1',
+    avatar: 'https://randomuser.me/api/portraits/men/15.jpg',
+  },
+  {
+    id: 6,
+    name: 'Huỳnh Duyên',
+    badge: '1',
+    avatar: 'https://randomuser.me/api/portraits/women/16.jpg',
+  },
+  {
+    id: 7,
+    name: 'Nguyễn Thị Lãnh',
+    badge: '1',
+    avatar: 'https://randomuser.me/api/portraits/women/17.jpg',
+  },
+  {
+    id: 8,
+    name: 'Nguyễn Diệu Hồng',
+    badge: '1',
+    avatar: 'https://randomuser.me/api/portraits/women/18.jpg',
+  },
+  {
+    id: 9,
+    name: 'Đoàn Anh Thư',
+    badge: '1',
+    avatar: 'https://randomuser.me/api/portraits/women/19.jpg',
+  },
+  {
+    id: 10,
+    name: 'Phạm Thị Minh',
+    badge: '1',
+    avatar: 'https://randomuser.me/api/portraits/women/20.jpg',
+  },
 ]
 
 const newClasses = [
