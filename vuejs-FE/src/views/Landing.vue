@@ -327,7 +327,7 @@
                 </h2>
                 <ul class="divide-y divide-dashed divide-gray-300">
                   <li
-                    class="flex items-center space-x-2 py-2"
+                    class="flex items-center space-x-4 py-2"
                     v-for="tutor in newTutors.slice(0, 10)"
                     :key="tutor.id"
                   >
