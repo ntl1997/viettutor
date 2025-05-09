@@ -230,6 +230,9 @@ import FooterComponent from '@/components/Footers/Footer.vue'
 import { onMounted, ref } from 'vue'
 import axios from 'axios'
 
+// URL
+const url = import.meta.env.VITE_API_BASE_URL
+
 // Data phổ biến
 const popularClasses = [
   'Đàn Guitar',
@@ -259,8 +262,6 @@ const classes = ref([])
 const currentPage = ref(0)
 const totalPages = ref(0)
 const pageSize = ref(10)
-
-// Bộ lọc (tạm thời chưa dùng search nhưng có thể bind vào sau)
 const subjectId = ref(0)
 const levelId = ref(0)
 const locationId = ref(0)
@@ -270,7 +271,7 @@ const status = ref('')
 // Hàm lấy dữ liệu lớp từ API
 async function getClasses() {
   try {
-    const response = await axios.get('http://localhost:8080/lop-moi', {
+    const response = await axios.get(`${url}/lop-moi`, {
       params: {
         page: currentPage.value,
         size: pageSize.value,
@@ -290,6 +291,8 @@ async function getClasses() {
 }
 
 // Hàm lấy dữ liệu trình độ từ API
+async function getSubjects() {}
+
 // Hàm lấy dữ liệu khu vực từ API
 
 // Khi component mount, đọc page từ URL → gọi API
