@@ -678,16 +678,16 @@ import team3 from '@/assets/img/team-3-800x800.jpg'
 import team4 from '@/assets/img/team-4-470x470.png'
 
 const newTutors = [
-  { id: 1, name: 'Trần Lê Hoài Thương' },
-  { id: 2, name: 'Dương Minh Hoàng' },
-  { id: 3, name: 'Tài khoản 434' },
-  { id: 4, name: 'Lê Chí Khang' },
-  { id: 5, name: 'Tài khoản 6212' },
-  { id: 6, name: 'Nguyễn Tấn Vinh' },
-  { id: 7, name: 'Lê Bá Dũng' },
-  { id: 8, name: 'Đỗ Vũ Ngân Giao' },
-  { id: 9, name: 'tuyetnhung' },
-  { id: 10, name: 'Mai Tùng Lâm' },
+  { id: 1, name: 'Trần Lê Hoài Thương', avatar: 'https://via.placeholder.com/32?text=TLHT' },
+  { id: 2, name: 'Dương Minh Hoàng', avatar: 'https://via.placeholder.com/32?text=DMH' },
+  { id: 3, name: 'Tài khoản 434', avatar: 'https://via.placeholder.com/32?text=TK434' },
+  { id: 4, name: 'Lê Chí Khang', avatar: 'https://via.placeholder.com/32?text=LCK' },
+  { id: 5, name: 'Tài khoản 6212', avatar: 'https://via.placeholder.com/32?text=TK6212' },
+  { id: 6, name: 'Nguyễn Tấn Vinh', avatar: 'https://via.placeholder.com/32?text=NTV' },
+  { id: 7, name: 'Lê Bá Dũng', avatar: 'https://via.placeholder.com/32?text=LBD' },
+  { id: 8, name: 'Đỗ Vũ Ngân Giao', avatar: 'https://via.placeholder.com/32?text=DVNG' },
+  { id: 9, name: 'tuyetnhung', avatar: 'https://via.placeholder.com/32?text=TN' },
+  { id: 10, name: 'Mai Tùng Lâm', avatar: 'https://via.placeholder.com/32?text=MTL' },
 ]
 
 const highlightedTutors = [
