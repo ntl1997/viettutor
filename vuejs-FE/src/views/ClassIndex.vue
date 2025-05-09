@@ -39,8 +39,9 @@
 
   <br />
 
-  <!-- content -->
   <div class="container mx-auto px-4 py-4">
+    <!-- content -->
+
     <div class="grid lg:grid-cols-4 px-4 py-4">
       <div class="rounded lg:col-span-3">
         <!-- load from database -->
@@ -82,34 +83,43 @@
               </span>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-gray-700">
-              <div class="flex items-center space-x-2">
-                <i class="fa fa-clock"></i>
-                <span>Tạo lúc: {{ item.createdAt }}</span>
+            <div class="grid sm:grid-cols-2 gap-4 text-sm text-gray-700">
+              <div class="grid grid-cols-1 gap-4 text-sm text-gray-700">
+                <div class="flex items-center space-x-2">
+                  <i class="fa fa-clock"></i>
+                  <p><span class="font-semibold">Tạo lúc: </span>{{ item.createdAt }}</p>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <i class="fa fa-user"></i>
+                  <p><span class="font-semibold">Người đăng: </span>{{ item.postedBy.fullName }}</p>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <i class="fa fa-map-marker-alt"></i>
+                  <p><span class="font-semibold">Địa điểm: </span>{{ item.location.name }}</p>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <i class="fa fa-calendar"></i>
+                  <p><span class="font-semibold">Lịch học: </span>{{ item.schedule }}</p>
+                </div>
               </div>
-              <div class="flex items-center space-x-2">
-                <i class="fa fa-user"></i>
-                <span>Người đăng: {{ item.postedBy.fullName }}</span>
-              </div>
-              <div class="flex items-center space-x-2">
-                <i class="fa fa-map-marker-alt"></i>
-                <span>Địa điểm: {{ item.location.name }}</span>
-              </div>
-              <div class="flex items-center space-x-2">
-                <i class="fa fa-calendar"></i>
-                <span>Lịch học: {{ item.schedule }}</span>
-              </div>
-              <div class="flex items-center space-x-2">
-                <i class="fa fa-book"></i>
-                <span>Môn học: {{ item.subject.name }}</span>
-              </div>
-              <div class="flex items-center space-x-2">
-                <i class="fa-solid fa-turn-up"></i>
-                <span>Trình độ: {{ item.level.name }}</span>
-              </div>
-              <div class="flex items-center space-x-2">
-                <i class="fas fa-laptop"></i>
-                <span>Hình thức học: {{ item.learningMode }}</span>
+
+              <div class="grid grid-cols-1 gap-4 text-sm text-gray-700">
+                <div class="flex items-center space-x-2">
+                  <i class="fa fa-book"></i>
+                  <p><span class="font-semibold">Môn học: </span>{{ item.subject.name }}</p>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <i class="fa-solid fa-turn-up"></i>
+                  <p><span class="font-semibold">Trình độ: </span>{{ item.level.name }}</p>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <i class="fas fa-laptop"></i>
+                  <p><span class="font-semibold">Hình thức học: </span>{{ item.learningMode }}</p>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <i></i>
+                  <p><span class="font-semibold"></span></p>
+                </div>
               </div>
             </div>
           </div>
