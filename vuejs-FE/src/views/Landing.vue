@@ -331,11 +331,8 @@
                     v-for="tutor in newTutors.slice(0, 10)"
                     :key="tutor.id"
                   >
-                    <img
-                      src="https://via.placeholder.com/32"
-                      class="w-8 h-8 rounded-full"
-                      alt="avatar"
-                    />
+                    <img :src="tutor.avatar" class="w-8 h-8 rounded-full" alt="avatar" />
+
                     <span class="text-gray-800">{{ tutor.name }}</span>
                   </li>
                 </ul>
