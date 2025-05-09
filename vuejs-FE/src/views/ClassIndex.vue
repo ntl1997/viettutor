@@ -50,12 +50,10 @@
     </div>
   </section>
 
-  <br />
-
   <div class="container mx-auto px-4 py-4">
     <!-- content -->
     <div class="grid lg:grid-cols-4 px-4 py-4">
-      <div class="rounded lg:col-span-3">
+      <div class="rounded lg:col-span-3 mb-4">
         <!-- load from database -->
         <div class="rounded p-4" v-for="(item, index) in classes" :key="index">
           <div class="max-w-3xl mx-auto p-6 bg-white rounded-xl shadow-md space-y-6">
@@ -132,9 +130,90 @@
             </div>
           </div>
         </div>
+
+        <!-- pagination -->
+        <ul class="flex justify-center gap-1 text-gray-900">
+          <li v-if="currentPage > 0">
+            <router-link
+              :to="{
+                query: {
+                  page: currentPage - 1,
+                  subjectId: subject,
+                  levelId: level,
+                  locationId: location,
+                  learningMode: mode,
+                },
+              }"
+              class="grid size-8 place-content-center rounded border border-gray-200 transition-colors hover:bg-gray-50 rtl:rotate-180"
+              aria-label="Previous page"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="size-4"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </router-link>
+          </li>
+
+          <li v-for="(page, index) in totalPages" :key="index">
+            <router-link
+              :to="{
+                query: {
+                  page: page - 1,
+                  subjectId: subject,
+                  levelId: level,
+                  locationId: location,
+                  learningMode: mode,
+                },
+              }"
+              :class="{
+                'block size-8 rounded border text-center text-sm/8 font-medium transition-colors hover:bg-gray-50': true,
+                'bg-indigo-600 text-white': currentPage === page - 1,
+              }"
+            >
+              {{ page }}
+            </router-link>
+          </li>
+
+          <li v-if="currentPage < totalPages - 1">
+            <router-link
+              :to="{
+                query: {
+                  page: currentPage + 1,
+                  subjectId: subject,
+                  levelId: level,
+                  locationId: location,
+                  learningMode: mode,
+                },
+              }"
+              class="grid size-8 place-content-center rounded border border-gray-200 transition-colors hover:bg-gray-50 rtl:rotate-180"
+              aria-label="Next page"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="size-4"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </router-link>
+          </li>
+        </ul>
       </div>
 
-      <div class="rounded">
+      <div class="rounded mb-4">
         <!-- Đăng ký gia sư -->
         <div class="rounded text-center bg-gray-300 mb-4 py-4 px-4">
           <p class="mb-4">"Bạn đã tham gia đội ngũ Gia Sư của chúng tôi chưa?"</p>
@@ -169,90 +248,8 @@
         </div>
       </div>
     </div>
-
-    <!-- pagination -->
-    <ul class="flex justify-center gap-1 text-gray-900">
-      <li v-if="currentPage > 0">
-        <router-link
-          :to="{
-            query: {
-              page: currentPage - 1,
-              subjectId: subject,
-              levelId: level,
-              locationId: location,
-              learningMode: mode,
-            },
-          }"
-          class="grid size-8 place-content-center rounded border border-gray-200 transition-colors hover:bg-gray-50 rtl:rotate-180"
-          aria-label="Previous page"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="size-4"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            />
-          </svg>
-        </router-link>
-      </li>
-
-      <li v-for="(page, index) in totalPages" :key="index">
-        <router-link
-          :to="{
-            query: {
-              page: page - 1,
-              subjectId: subject,
-              levelId: level,
-              locationId: location,
-              learningMode: mode,
-            },
-          }"
-          :class="{
-            'block size-8 rounded border text-center text-sm/8 font-medium transition-colors hover:bg-gray-50': true,
-            'bg-indigo-600 text-white': currentPage === page - 1,
-          }"
-        >
-          {{ page }}
-        </router-link>
-      </li>
-
-      <li v-if="currentPage < totalPages - 1">
-        <router-link
-          :to="{
-            query: {
-              page: currentPage + 1,
-              subjectId: subject,
-              levelId: level,
-              locationId: location,
-              learningMode: mode,
-            },
-          }"
-          class="grid size-8 place-content-center rounded border border-gray-200 transition-colors hover:bg-gray-50 rtl:rotate-180"
-          aria-label="Next page"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="size-4"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-              clip-rule="evenodd"
-            />
-          </svg>
-        </router-link>
-      </li>
-    </ul>
   </div>
 
-  <br />
   <br />
 
   <FooterComponent />
@@ -284,7 +281,6 @@ const level = ref(0)
 const location = ref(0)
 const mode = ref('')
 const status = ref('')
-const filtersLoaded = ref(false)
 
 // dữ liệu mẫu lớp học phổ biến
 const popularClasses = [
@@ -332,22 +328,19 @@ async function getClasses() {
   }
 }
 
-// Hàm lấy dữ liệu cho bộ lọc từ API
+// Hàm lấy dữ liệu cho thanh tìm kiếm từ API
 async function getFilters() {
-  // nếu đã nạp dữ liệu bộ lọc thì không cần nạp lại
-  if (filtersLoaded.value) return
   try {
     const response = await axios.get(`${url}/filter-options`)
     subjects.value = response.data.subjects
     levels.value = response.data.levels
     locations.value = response.data.locations
-    filtersLoaded.value = true
   } catch (error) {
     console.error('Lỗi khi lấy danh sách bộ lọc:', error)
   }
 }
 
-// Theo dõi query param
+// Theo dõi query param từ URL → gọi API
 watch(
   () => route.query,
   (query) => {
@@ -356,18 +349,14 @@ watch(
     level.value = parseInt(query.levelId) || 0
     location.value = parseInt(query.locationId) || 0
     mode.value = query.learningMode || ''
-    getClasses()
+    getClasses() // đổ dữ liệu lớp học
   },
   { immediate: true },
 )
 
-// Khi component mount, đọc page từ URL → gọi API
+// Khi component được nạp, đọc page từ URL → gọi API
 onMounted(() => {
-  // const queryParams = new URLSearchParams(window.location.search)
-  // const pageFromUrl = parseInt(queryParams.get('page'))
-  // currentPage.value = isNaN(pageFromUrl) ? 0 : pageFromUrl
-  // getClasses()
-  getFilters()
+  getFilters() // nạp dữ liệu cho thanh tìm kiếm
 })
 </script>
 
