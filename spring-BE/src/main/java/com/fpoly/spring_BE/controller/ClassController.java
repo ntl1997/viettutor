@@ -38,7 +38,7 @@ public class ClassController {
         this.locationService = locationService;
     }
 
-    // đổ dữ liệu lên trang
+    // đổ dữ liệu lớp học lên trang
     @GetMapping("/lop-moi")
     public ResponseEntity<Page<Class>> getClassesByFilters(
             @RequestParam(value = "page", defaultValue = "0") int page,
@@ -62,6 +62,7 @@ public class ClassController {
         }
     }
 
+    // Gửi dữ liệu môn học, cấp bậc, địa điểm cho bộ lọc
     @GetMapping("/filter-options")
     public ResponseEntity<Map<String, Object>> getFilterOptions() {
         Map<String, Object> response = new HashMap<>();
