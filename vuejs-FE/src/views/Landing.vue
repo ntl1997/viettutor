@@ -371,7 +371,7 @@
               <!-- Lớp mới -->
               <div class="w-full md:w-1/3">
                 <h2 class="text-xl font-bold mb-4 border-b-2 border-green-500 inline-block">
-                  Lớp <span class="text-green-500" style="color: green">Mới</span>
+                  Lớp <span style="color: green">Mới</span>
                 </h2>
                 <ul class="divide-y divide-dashed divide-gray-300">
                   <li class="py-2" v-for="classItem in newClasses.slice(0, 10)" :key="classItem.id">
