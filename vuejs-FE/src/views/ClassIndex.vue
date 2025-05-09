@@ -11,6 +11,12 @@
           class="px-4 py-2 rounded border border-gray-300 w-40"
         />
         <select class="px-4 py-2 rounded border border-gray-300 w-40">
+          <option>Môn học</option>
+          <option value="student">Sinh viên</option>
+          <option value="teacher">Giáo viên</option>
+          <option value="graduated">Đã tốt nghiệp</option>
+        </select>
+        <select class="px-4 py-2 rounded border border-gray-300 w-40">
           <option>Trình độ</option>
           <option value="student">Sinh viên</option>
           <option value="teacher">Giáo viên</option>
