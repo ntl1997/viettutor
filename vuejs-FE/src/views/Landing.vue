@@ -340,7 +340,7 @@
               </div>
 
               <!-- Gia sư nổi bật -->
-              <div class="md:w-3/12 md:px-10">
+              <div class="md:w-4/12 md:px-10">
                 <h2 class="text-xl font-bold mb-4 border-b-2 border-green-500 inline-block">
                   Gia sư nổi bật<span style="color: green"> Tháng 05</span>
                 </h2>
@@ -364,7 +364,7 @@
               </div>
 
               <!-- Lớp mới -->
-              <div class="md:w-6/12 md:pl-10">
+              <div class="md:w-5/12 md:pl-10">
                 <h2 class="text-xl font-bold mb-4 border-b-2 border-green-500 inline-block">
                   Lớp <span style="color: green">Mới</span>
                 </h2>
