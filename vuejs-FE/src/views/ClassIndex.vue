@@ -253,7 +253,7 @@
     </div>
   </div>
 
-  <RegisterModal :visible="showModal" @close="showModal = false" />
+  <ClassIndexModel :visible="showModal" @close="showModal = false" />
 
   <br />
 
@@ -263,7 +263,7 @@
 <script setup>
 import IndexNavbar from '@/components/Navbars/IndexNavbar.vue'
 import FooterComponent from '@/components/Footers/Footer.vue'
-import RegisterModal from '@/components/RegisterModal.vue'
+import ClassIndexModel from '@/components/ClassIndexModel.vue'
 import { onMounted, ref, watch } from 'vue'
 import axios from 'axios'
 import { useRoute } from 'vue-router'
