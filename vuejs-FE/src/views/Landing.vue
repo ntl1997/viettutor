@@ -323,7 +323,7 @@
               class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row md:items-start md:gap-32 md:w-full"
             >
               <!-- Gia sư Mới -->
-              <div class="md:w-3/12 md:pr-10">
+              <div class="basis-[29.17%] md:px-10">
                 <h2 class="text-xl font-bold mb-4 border-b-2 border-green-500 inline-block">
                   Gia sư <span style="color: green">Mới</span>
                 </h2>
@@ -340,7 +340,7 @@
               </div>
 
               <!-- Gia sư nổi bật -->
-              <div class="md:w-4/12 md:px-10">
+              <div class="basis-[29.17%] md:px-10">
                 <h2 class="text-xl font-bold mb-4 border-b-2 border-green-500 inline-block">
                   Gia sư nổi bật<span style="color: green"> Tháng 05</span>
                 </h2>
