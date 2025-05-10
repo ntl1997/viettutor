@@ -392,24 +392,23 @@
         <div class="container mx-auto px-4">
           <!-- Tiêu đề -->
           <div class="mb-6 text-left">
-            <h2 class="text-xl font-semibold">
+            <h2 class="text-2xl font-semibold">
               Tìm gia sư theo các
-              <span class="text-green-600 relative inline-block">
+              <span class="relative inline-block" style="color: green">
                 môn phổ biến
                 <span class="absolute left-0 -bottom-1 w-full h-[2px] bg-green-500"></span>
               </span>
             </h2>
           </div>
 
-          <!-- Danh sách button môn học -->
-          <div class="flex flex-wrap gap-3">
-            <button
-              v-for="subject in popularSubjects"
-              :key="subject"
-              class="px-4 py-2 border border-gray-300 rounded-md text-gray-700 text-sm font-medium transition hover:bg-green-100 hover:text-green-700"
-            >
-              {{ subject }}
-            </button>
+          <div class="flex flex-wrap -mx-2">
+            <div v-for="subject in popularSubjects" :key="subject" class="px-2 mb-4">
+              <button
+                class="px-6 py-3 border border-gray-300 rounded-md text-gray-700 text-sm font-medium transition hover:bg-green-500 hover:text-white hover:shadow-md hover:scale-105"
+              >
+                {{ subject }}
+              </button>
+            </div>
           </div>
 
           <div class="flex flex-wrap pt-20">
