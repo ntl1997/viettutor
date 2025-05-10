@@ -388,18 +388,31 @@
         </div>
       </section>
 
-      <section class="pt-20 pb-48">
+      <section class="pb-48">
         <div class="container mx-auto px-4">
-          <div class="flex flex-wrap justify-center text-center mb-24">
-            <div class="w-full lg:w-6/12 px-4">
-              <h2 class="text-4xl font-semibold">Here are our heroes</h2>
-              <p class="text-lg leading-relaxed m-4 text-blueGray-500">
-                According to the National Oceanic and Atmospheric Administration, Ted, Scambos,
-                NSIDClead scentist, puts the potentially record maximum.
-              </p>
-            </div>
+          <!-- Tiêu đề -->
+          <div class="mb-6 text-left">
+            <h2 class="text-xl font-semibold">
+              Tìm gia sư theo các
+              <span class="text-green-600 relative inline-block">
+                môn phổ biến
+                <span class="absolute left-0 -bottom-1 w-full h-[2px] bg-green-500"></span>
+              </span>
+            </h2>
           </div>
-          <div class="flex flex-wrap">
+
+          <!-- Danh sách button môn học -->
+          <div class="flex flex-wrap gap-3">
+            <button
+              v-for="subject in popularSubjects"
+              :key="subject"
+              class="px-4 py-2 border border-gray-300 rounded-md text-gray-700 text-sm font-medium transition hover:bg-green-100 hover:text-green-700"
+            >
+              {{ subject }}
+            </button>
+          </div>
+
+          <div class="flex flex-wrap pt-20">
             <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
               <div class="px-6">
                 <img alt="..." :src="team1" class="shadow-lg rounded-full mx-auto max-w-120-px" />
@@ -769,6 +782,28 @@ const newClasses = [
   { id: '21236', description: 'Cần gia sư môn Violin tại Hóc Môn, Hồ Chí Minh' },
 ]
 
+const popularSubjects = [
+  'Toán Lớp 2',
+  'Toán lớp 3',
+  'Toán Lớp 1',
+  'Toán lớp 4',
+  'Toán lớp 5',
+  'Toán lớp 6',
+  'Toán lớp 7',
+  'Tiếng Việt Lớp 1',
+  'Tiếng Việt Lớp 2',
+  'Toán lớp 8',
+  'Tiếng Việt lớp 3',
+  'Tiếng Anh',
+  'Tiếng Việt lớp 4',
+  'Tiếng Anh lớp 3',
+  'Toán lớp 9',
+  'Tiếng Anh Lớp 2',
+  'Tiếng Anh Lớp 1',
+  'Tiếng Anh lớp 4',
+  'Tiếng Việt lớp 5',
+]
+
 export default {
   data() {
     return {
@@ -779,6 +814,7 @@ export default {
       newTutors,
       highlightedTutors,
       newClasses,
+      popularSubjects,
     }
   },
   components: {
