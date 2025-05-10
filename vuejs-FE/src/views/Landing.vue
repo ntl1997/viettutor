@@ -404,7 +404,7 @@
           <div class="flex flex-wrap -mx-2">
             <div v-for="subject in popularSubjects" :key="subject" class="px-2 mb-4">
               <button
-                class="px-6 py-3 border border-gray-300 rounded-md text-gray-700 text-sm font-medium transition hover:bg-green-500 hover:text-white hover:shadow-md hover:scale-105"
+                class="px-6 py-3 border border-gray-300 rounded-md text-gray-700 text-sm font-medium transition duration-200 ease-in-out hover:bg-green-500 hover:text-white hover:shadow-md hover:scale-105"
               >
                 {{ subject }}
               </button>
@@ -803,6 +803,7 @@ const popularSubjects = [
   'Tiếng Việt lớp 5',
 ]
 
+const hovered = ref(null)
 export default {
   data() {
     return {
@@ -814,6 +815,7 @@ export default {
       highlightedTutors,
       newClasses,
       popularSubjects,
+      hovered,
     }
   },
   components: {
