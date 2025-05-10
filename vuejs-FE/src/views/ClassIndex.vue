@@ -72,12 +72,13 @@
                 </div>
               </div>
               <div class="rounded">
-                <div class="flex items-center justify-center bg-green-100 px-4 rounded">
+                <div class="flex items-center justify-center px-4 rounded">
                   <button
-                    class="bg-green-500 text-white font-semibold px-4 py-2 rounded hover:bg-green-600"
+                    class="w-full bg-[#449d44] font-semibold px-4 py-2 rounded hover:bg-[#367d36] focus:outline-none focus:ring-2 focus:ring-[#2e6b2e] active:bg-[#2e6b2e]"
+                    @click="showModal = true"
                   >
-                    <span class="text-yellow-500">Nhận lớp ngay </span>
-                    <span class="text-green-600 font-bold">({{ item.status }}) </span>
+                    <span class="text-[#fbfd02]">Nhận lớp ngay </span>
+                    <span class="text-white">({{ item.status }})</span>
                   </button>
                 </div>
               </div>
@@ -252,6 +253,8 @@
     </div>
   </div>
 
+  <RegisterModal :visible="showModal" @close="showModal = false" />
+
   <br />
 
   <FooterComponent />
@@ -260,6 +263,7 @@
 <script setup>
 import IndexNavbar from '@/components/Navbars/IndexNavbar.vue'
 import FooterComponent from '@/components/Footers/Footer.vue'
+import RegisterModal from '@/components/RegisterModal.vue'
 import { onMounted, ref, watch } from 'vue'
 import axios from 'axios'
 import { useRoute } from 'vue-router'
@@ -283,6 +287,7 @@ const level = ref(0)
 const location = ref(0)
 const mode = ref('')
 const status = ref('')
+const showModal = ref(false)
 
 // dữ liệu mẫu lớp học phổ biến
 const popularClasses = [
