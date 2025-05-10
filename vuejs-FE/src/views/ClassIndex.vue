@@ -216,9 +216,12 @@
         <!-- Đăng ký gia sư -->
         <div class="rounded text-center bg-gray-300 mb-4 py-4 px-4">
           <p class="mb-4">"Bạn đã tham gia đội ngũ Gia Sư của chúng tôi chưa?"</p>
-          <button class="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-6 rounded">
+          <router-link
+            class="inline-block rounded-sm bg-red-500 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:ring-3 focus:outline-hidden"
+            :to="'/auth/register'"
+          >
             ĐĂNG KÝ LÀM GIA SƯ
-          </button>
+          </router-link>
         </div>
 
         <!-- Hộp gọi hỗ trợ -->
