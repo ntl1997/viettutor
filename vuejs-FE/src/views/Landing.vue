@@ -370,7 +370,7 @@
                 </h2>
                 <ul class="divide-y divide-dashed divide-gray-300">
                   <li
-                    class="flex items-center space-x-4 py-2 min-h-[48px]"
+                    class="flex items-center space-x-4 py-3 h-[48px] px-2"
                     v-for="classItem in newClasses.slice(0, 10)"
                     :key="classItem.id"
                   >
