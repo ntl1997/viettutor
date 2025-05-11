@@ -392,7 +392,7 @@
         <div class="container mx-auto px-4">
           <!-- Tiêu đề -->
           <div class="mb-6 text-left">
-            <h2 class="text-2xl font-semibold">
+            <h2 class="text-3xl font-bold">
               Tìm gia sư theo các
               <span class="relative inline-block" style="color: green">
                 môn phổ biến
@@ -418,9 +418,13 @@
           <div class="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <!-- Bên trái: Đăng ký ngay -->
             <div>
-              <h2 class="text-5xl font-extrabold mb-6">
-                Đăng <span class="text-green-600">ký</span> ngay!
-              </h2>
+              <h3 class="text-3xl font-bold mb-4">
+                <span class="relative inline-block" style="color: green"
+                  >Đăng ký
+                  <span class="absolute left-0 -bottom-1 w-full h-[2px] bg-green-500"></span>
+                </span>
+                ngay!
+              </h3>
               <ul class="text-lg mb-8 space-y-4">
                 <li>
                   - <span class="text-green-700">Nếu bạn cần tìm Gia sư:</span> hãy
@@ -462,7 +466,7 @@
             <!-- Bên phải: Quy trình nhận lớp -->
             <div>
               <h3 class="text-3xl font-bold mb-4">
-                Quy trình nhận lớp <span class="text-green-600">của gia sư</span>
+                Quy trình nhận lớp <span style="color: green">của gia sư</span>
               </h3>
               <ul class="text-lg list-disc list-inside space-y-4">
                 <li>
