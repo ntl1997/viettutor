@@ -464,31 +464,30 @@
             </div>
 
             <!-- Bên phải: Quy trình nhận lớp -->
-            <div>
+            <div class="mt-8 lg:mt-0">
               <h3 class="text-3xl font-bold mb-4">
                 Quy trình nhận lớp <span style="color: green">của gia sư</span>
               </h3>
-              <ul class="text-lg list-disc list-inside space-y-4">
-                <li>
-                  Đăng ký tài khoản gia sư và cập nhật thông tin tại:
+              <div class="text-lg space-y-4 leading-relaxed">
+                <p>
+                  Hướng dẫn nhận lớp tại web:<br />
                   <strong>Daykemtainha.vn</strong>
-                </li>
-                <li>
-                  Kích “Nhận lớp ngay” tại lớp bạn muốn nhận. Bộ phận giao lớp sẽ kiểm tra và phản
-                  hồi qua mục “Danh sách lớp dạy”.
-                </li>
-                <li>Khi xác nhận được nhận lớp, bạn chuyển khoản hoặc đến trung tâm nhận lớp.</li>
-                <li>
-                  Link tải ứng dụng:
-                  <a
-                    href="https://www.daykemtainha.vn/ung-dung-gia-su-day-kem"
-                    target="_blank"
-                    class="text-green-700 underline"
-                  >
-                    https://www.daykemtainha.vn/ung-dung-gia-su-day-kem
-                  </a>
-                </li>
-              </ul>
+                </p>
+                <p>
+                  <strong>Bước 1:</strong> Đăng ký tài khoản gia sư và cập nhật thông tin gia sư đầy
+                  đủ tại: <strong>Daykemtainha.vn</strong>
+                </p>
+                <p>
+                  <strong>Bước 2:</strong> Kích “<strong>Nhận lớp ngay</strong>” tại lớp bạn muốn
+                  nhận, bộ phận giao lớp kiểm tra thông tin của bạn phù hợp sẽ alo sắp xếp, nếu chưa
+                  phù hợp sẽ phản hồi trong tài khoản của bạn mục “<strong>Danh sách lớp dạy</strong
+                  >”.
+                </p>
+                <p>
+                  <strong>Bước 3:</strong> Khi bộ phận giao lớp xác nhận bạn được nhận lớp, bạn
+                  chuyển khoản hoặc đến trung tâm nhận lớp.
+                </p>
+              </div>
             </div>
           </div>
         </div>
