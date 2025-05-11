@@ -475,7 +475,7 @@
                 </p>
                 <p>
                   <strong>Bước 1:</strong> Đăng ký tài khoản gia sư và cập nhật thông tin gia sư đầy
-                  đủ tại: <strong>Daykemtainha.vn</strong>
+                  đủ tại: <strong>Viettutor.vn</strong>
                 </p>
                 <p>
                   <strong>Bước 2:</strong> Kích “<strong>Nhận lớp ngay</strong>” tại lớp bạn muốn
