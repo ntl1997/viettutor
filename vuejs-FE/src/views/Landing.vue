@@ -427,12 +427,12 @@
               </h3>
               <ul class="text-lg mb-8 space-y-4">
                 <li>
-                  - <span class="text-green-700">Nếu bạn cần tìm Gia sư:</span> hãy
+                  - <span style="color: green"><strong>Nếu bạn cần tìm Gia sư:</strong></span> hãy
                   <span class="text-green-700 font-bold">Đăng Ký ngay</span> để tiếp cận với hàng
                   nghìn gia sư trên toàn quốc.
                 </li>
                 <li>
-                  - <span class="text-green-700">Nếu bạn là gia sư:</span> hãy
+                  - <span style="color: green"><strong>Nếu bạn là gia sư:</strong></span> hãy
                   <span class="text-green-700 font-bold">Đăng Ký ngay</span> để tiếp cận nhanh chóng
                   với học viên.
                 </li>
