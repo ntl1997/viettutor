@@ -403,9 +403,7 @@
           <!-- Danh sách button môn học -->
           <div class="flex flex-wrap -mx-2">
             <div v-for="subject in popularSubjects" :key="subject" class="px-2 mb-4">
-              <button
-                class="px-6 py-3 border border-gray-300 rounded-md text-gray-700 text-sm font-medium transition duration-200 ease-in-out hover:bg-green-500 hover:text-white hover:shadow-md hover:scale-105"
-              >
+              <button class="subject-button">
                 {{ subject }}
               </button>
             </div>
@@ -695,3 +693,24 @@ export default {
   },
 }
 </script>
+
+<style>
+.subject-button {
+  padding: 12px 24px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: white;
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.subject-button:hover {
+  background-color: #22c55e;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+}
+</style>
