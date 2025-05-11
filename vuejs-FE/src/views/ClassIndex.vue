@@ -63,7 +63,7 @@
             <div class="grid gap-4 lg:grid-cols-2 lg:gap-8">
               <div class="rounded">
                 <p class="text-sm text-gray-500">
-                  Mã lớp: <span class="font-bold">{{ item.id }}</span> ·
+                  <span class="text-lg font-bold">Mã lớp: {{ item.id }}</span> ·
                   <a href="#" class="text-red-500 hover:underline">Xem thêm</a>
                 </p>
                 <div class="text-lg">
@@ -84,7 +84,7 @@
               </div>
             </div>
 
-            <div class="p-4 bg-gray-50 border rounded text-sm italic text-gray-600">
+            <div class="p-4 bg-gray-50 border rounded text-sm italic text-gray-700">
               <i class="fa-solid fa-person-chalkboard"></i>
               <span class="font-semibold">
                 Yêu cầu gia sư giảng dạy:
