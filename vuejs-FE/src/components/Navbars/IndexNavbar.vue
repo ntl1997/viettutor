@@ -42,7 +42,7 @@
         <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
           <li class="flex items-center">
             <router-link
-              to="/"
+              to="/lop-moi"
               class="hover:text-blueGray-500 text-blueGray-700 px-3 py-2 flex items-center text-xs uppercase font-bold"
             >
               Lớp mới

@@ -26,6 +26,9 @@ import Index from '@/views/Index.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
+  scrollBehavior(to, from, savedPosition) {
+    return { top: 0 } // Luôn cuộn về đầu trang khi chuyển trang
+  },
   routes: [
     // {
     //   path: '/',
@@ -91,6 +94,7 @@ const router = createRouter({
       component: Index,
     },
     { path: '/:pathMatch(.*)*', redirect: '/' },
+    { path: '/lop-moi', component: () => import('@/views/ClassIndex.vue') },
   ],
 })
 
