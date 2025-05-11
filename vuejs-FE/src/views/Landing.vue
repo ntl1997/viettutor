@@ -471,7 +471,7 @@
               <div class="text-lg space-y-4 leading-relaxed">
                 <p>
                   Hướng dẫn nhận lớp tại web:<br />
-                  <strong>Daykemtainha.vn</strong>
+                  <strong>Viettutor.vn</strong>
                 </p>
                 <p>
                   <strong>Bước 1:</strong> Đăng ký tài khoản gia sư và cập nhật thông tin gia sư đầy
