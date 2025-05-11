@@ -114,7 +114,9 @@
       <div class="overflow-x-auto">
         <div class="time-schedule">
           <div v-for="(day, dayIndex) in days" :key="dayIndex" class="day-row">
-            <div class="day-label mr-2 whitespace-nowrap">{{ day }}</div>
+            <div class="day-label mr-2 whitespace-nowrap" style="font-weight: normal">
+              {{ day }}
+            </div>
             <div class="hours" style="gap: 2px">
               <button
                 v-for="hour in 24"
@@ -122,7 +124,15 @@
                 class="hour-button"
                 :class="{ active: selectedHours[dayIndex]?.includes(hour) }"
                 @click="toggleHourSelection(dayIndex, hour)"
-                style="padding: 2px; font-size: 12px"
+                style="
+                  padding: 0;
+                  font-size: 12px;
+                  width: 30px;
+                  height: 30px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                "
               >
                 {{ hour }}
               </button>
