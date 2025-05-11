@@ -213,7 +213,8 @@
         </ul>
       </div>
 
-      <div class="rounded mb-4">
+      <!-- sidebar -->
+      <div class="rounded mb-4 py-4 sticky top-24 self-start">
         <!-- Đăng ký gia sư -->
         <div class="rounded text-center bg-gray-300 mb-4 py-4 px-4">
           <p class="mb-4">"Bạn đã tham gia đội ngũ Gia Sư của chúng tôi chưa?"</p>
