@@ -409,6 +409,85 @@
             </div>
           </div>
         </div>
+
+        <!-- Đăng ký ngay và Quy trình nhận lớp -->
+        <div
+          class="bg-cover bg-center py-16 text-gray-900"
+          style="background-image: url('/images/bg-register.jpg')"
+        >
+          <div class="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <!-- Bên trái: Đăng ký ngay -->
+            <div>
+              <h2 class="text-5xl font-extrabold mb-6">
+                Đăng <span class="text-green-600">ký</span> ngay!
+              </h2>
+              <ul class="text-lg mb-8 space-y-4">
+                <li>
+                  - <span class="text-green-700">Nếu bạn cần tìm Gia sư:</span> hãy
+                  <span class="text-green-700 font-bold">Đăng Ký ngay</span> để tiếp cận với hàng
+                  nghìn gia sư trên toàn quốc.
+                </li>
+                <li>
+                  - <span class="text-green-700">Nếu bạn là gia sư:</span> hãy
+                  <span class="text-green-700 font-bold">Đăng Ký ngay</span> để tiếp cận nhanh chóng
+                  với học viên.
+                </li>
+              </ul>
+
+              <!-- Thống kê -->
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center mt-8">
+                <div>
+                  <div class="text-green-600 text-4xl mb-2">📘</div>
+                  <div class="text-2xl font-bold">754</div>
+                  <div class="uppercase text-sm">Lớp mới mỗi ngày</div>
+                </div>
+                <div>
+                  <div class="text-green-600 text-4xl mb-2">😊</div>
+                  <div class="text-2xl font-bold">3,000</div>
+                  <div class="uppercase text-sm">Gia sư</div>
+                </div>
+                <div>
+                  <div class="text-green-600 text-4xl mb-2">👥</div>
+                  <div class="text-2xl font-bold">675</div>
+                  <div class="uppercase text-sm">Nhận lớp thành công</div>
+                </div>
+                <div>
+                  <div class="text-green-600 text-4xl mb-2">🎓</div>
+                  <div class="text-2xl font-bold">1,248</div>
+                  <div class="uppercase text-sm">Phụ huynh hài lòng</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bên phải: Quy trình nhận lớp -->
+            <div>
+              <h3 class="text-3xl font-bold mb-4">
+                Quy trình nhận lớp <span class="text-green-600">của gia sư</span>
+              </h3>
+              <ul class="text-lg list-disc list-inside space-y-4">
+                <li>
+                  Đăng ký tài khoản gia sư và cập nhật thông tin tại:
+                  <strong>Daykemtainha.vn</strong>
+                </li>
+                <li>
+                  Kích “Nhận lớp ngay” tại lớp bạn muốn nhận. Bộ phận giao lớp sẽ kiểm tra và phản
+                  hồi qua mục “Danh sách lớp dạy”.
+                </li>
+                <li>Khi xác nhận được nhận lớp, bạn chuyển khoản hoặc đến trung tâm nhận lớp.</li>
+                <li>
+                  Link tải ứng dụng:
+                  <a
+                    href="https://www.daykemtainha.vn/ung-dung-gia-su-day-kem"
+                    target="_blank"
+                    class="text-green-700 underline"
+                  >
+                    https://www.daykemtainha.vn/ung-dung-gia-su-day-kem
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section class="pb-20 relative block bg-blueGray-800">
