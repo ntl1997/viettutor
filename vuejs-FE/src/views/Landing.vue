@@ -494,7 +494,11 @@
       </section>
 
       <section class="relative block bg-blueGray-800 pt-24 pb-12 px-4">
-        <div class="max-w-5xl mx-auto text-center">
+        <div
+          class="max-w-5xl mx-auto text-center"
+          @mouseenter="pauseAutoSlide"
+          @mouseleave="resumeAutoSlide"
+        >
           <!-- Tiêu đề -->
           <h2 class="text-4xl font-extrabold text-white">NHẬN XÉT CỦA</h2>
           <div class="w-24 h-1 bg-green-500 mx-auto my-4 rounded"></div>
@@ -503,13 +507,30 @@
             <span class="text-green-500">GIÁO VIÊN</span>
           </h3>
 
-          <!-- Avatar -->
-          <div class="mt-8">
+          <!-- Avatar + Nút điều hướng -->
+          <div class="mt-10 flex items-center justify-center">
+            <!-- Nút trái -->
+            <button
+              @click="prevReview"
+              class="mr-10 bg-white text-green-500 hover:bg-green-500 hover:text-white w-10 h-10 rounded-full shadow-md transition"
+            >
+              ‹
+            </button>
+
+            <!-- Avatar -->
             <img
               :src="reviews[currentIndex].avatar"
               alt="Avatar"
-              class="w-24 h-24 rounded-full mx-auto border-4 border-white shadow-lg object-cover"
+              class="w-24 h-24 rounded-full border-4 border-white shadow-lg object-cover"
             />
+
+            <!-- Nút phải -->
+            <button
+              @click="nextReview"
+              class="ml-10 bg-white text-green-500 hover:bg-green-500 hover:text-white w-10 h-10 rounded-full shadow-md transition"
+            >
+              ›
+            </button>
           </div>
 
           <!-- Icon trích dẫn -->
@@ -529,7 +550,7 @@
               v-for="(review, index) in reviews"
               :key="index"
               class="w-4 h-4 rounded-full transition duration-300 cursor-pointer"
-              :class="index === currentIndex ? 'bg-white' : 'bg-white/40'"
+              :class="index === currentIndex ? 'bg-white' : 'bg-white/30'"
               @click="goToReview(index)"
             ></span>
           </div>
@@ -738,22 +759,37 @@ const reviews = ref([
 ])
 
 const currentIndex = ref(0)
-
-const goToReview = (index) => {
-  currentIndex.value = index
-}
-
 let intervalId = null
 
-onMounted(() => {
+const startAutoSlide = () => {
+  clearInterval(intervalId)
   intervalId = setInterval(() => {
     currentIndex.value = (currentIndex.value + 1) % reviews.value.length
   }, 5000)
+}
+
+const goToReview = (index) => {
+  currentIndex.value = index
+  startAutoSlide() // 🔁 reset lại bộ đếm khi người dùng nhấn
+}
+
+onMounted(() => {
+  startAutoSlide()
 })
 
 onUnmounted(() => {
   clearInterval(intervalId)
 })
+
+const prevReview = () => {
+  currentIndex.value = (currentIndex.value - 1 + reviews.value.length) % reviews.value.length
+  startAutoSlide()
+}
+
+const nextReview = () => {
+  currentIndex.value = (currentIndex.value + 1) % reviews.value.length
+  startAutoSlide()
+}
 </script>
 
 <style>
