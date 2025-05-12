@@ -9,7 +9,7 @@ const posts = [
     title: "Những câu nói hay của Sư Minh Niệm - Chữa lành 24",
     excerpt: "Chia sẻ từ buổi giảng số 24",
     image: "https://images.unsplash.com/photo-1605721911519-3dfeb3be25e7?auto=format&fit=crop&w=870&q=80",
-    link: "#"
+    link: "http://localhost:5174/article/detailedarticle"
   },
   {
     title: "Những câu nói hay của Sư Minh Niệm - Chữa lành 23",
@@ -37,6 +37,7 @@ const posts = [
             <SidebarLinks />
           </div>
         </div>
+
       </div>
     </main>
 
