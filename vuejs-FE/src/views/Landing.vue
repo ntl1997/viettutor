@@ -493,7 +493,7 @@
         </div>
       </section>
 
-      <section class="relative block bg-blueGray-800 py-24 px-4">
+      <section class="relative block bg-blueGray-800 pt-24 pb-12 px-4">
         <div class="max-w-5xl mx-auto text-center">
           <!-- Tiêu đề -->
           <h2 class="text-4xl font-extrabold text-white">NHẬN XÉT CỦA</h2>
