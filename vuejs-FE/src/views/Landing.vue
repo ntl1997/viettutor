@@ -493,112 +493,77 @@
         </div>
       </section>
 
-      <section class="pb-20 relative block bg-blueGray-800">
-        <div
-          class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20"
-          style="transform: translateZ(0)"
-        >
-          <svg
-            class="absolute bottom-0 overflow-hidden"
-            xmlns="http://www.w3.org/2000/svg"
-            preserveAspectRatio="none"
-            version="1.1"
-            viewBox="0 0 2560 100"
-            x="0"
-            y="0"
-          >
-            <polygon
-              class="text-blueGray-800 fill-current"
-              points="2560 0 2560 100 0 100"
-            ></polygon>
-          </svg>
-        </div>
-
-        <div class="container mx-auto px-4 py-24">
+      <section class="relative block bg-blueGray-800 py-24 px-4">
+        <div class="max-w-5xl mx-auto text-center">
           <!-- Tiêu đề -->
-          <div class="text-center mb-16">
-            <h2 class="text-4xl font-bold text-white">NHẬN XÉT CỦA</h2>
-            <h3 class="text-3xl font-bold text-green-400 mt-2">PHỤ HUYNH & GIÁO VIÊN</h3>
+          <h2 class="text-4xl font-extrabold text-white">NHẬN XÉT CỦA</h2>
+          <div class="w-24 h-1 bg-green-500 mx-auto my-4 rounded"></div>
+          <h3 class="text-2xl md:text-3xl font-bold text-white">
+            <span class="text-green-400">PHỤ HUYNH</span> &
+            <span class="text-green-500">GIÁO VIÊN</span>
+          </h3>
+
+          <!-- Avatar -->
+          <div class="mt-8">
+            <img
+              :src="reviews[currentIndex].avatar"
+              alt="Avatar"
+              class="w-24 h-24 rounded-full mx-auto border-4 border-white shadow-lg object-cover"
+            />
           </div>
 
-          <!-- Box nhận xét -->
-          <div class="relative max-w-3xl mx-auto">
-            <div class="bg-white p-10 pt-20 rounded-lg shadow-xl relative">
-              <!-- Avatar nổi -->
-              <div class="absolute -top-12 left-1/2 transform -translate-x-1/2">
-                <img
-                  :src="reviews[currentIndex].avatar"
-                  alt="Avatar"
-                  class="w-24 h-24 rounded-full border-4 border-green-500 shadow-md object-cover"
-                />
-              </div>
+          <!-- Icon trích dẫn -->
+          <div class="text-5xl text-green-500 mt-6 mb-4">“</div>
 
-              <!-- Nội dung nhận xét -->
-              <p class="text-lg text-gray-700 leading-relaxed text-center">
-                “{{ reviews[currentIndex].text }}”
-              </p>
-              <h4 class="mt-4 text-green-600 font-semibold text-center">
-                {{ reviews[currentIndex].name }}
-              </h4>
-            </div>
+          <!-- Nội dung nhận xét -->
+          <p class="text-white text-lg leading-relaxed max-w-3xl mx-auto">
+            {{ reviews[currentIndex].text }}
+          </p>
 
-            <!-- Nút điều hướng -->
-            <button
-              @click="prevReview"
-              class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-green-500 text-white p-3 rounded-full hover:bg-green-600 shadow"
-            >
-              ‹
-            </button>
-            <button
-              @click="nextReview"
-              class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-green-500 text-white p-3 rounded-full hover:bg-green-600 shadow"
-            >
-              ›
-            </button>
+          <!-- Tên -->
+          <p class="mt-6 font-semibold text-white">{{ reviews[currentIndex].name }}</p>
 
-            <!-- Chấm chỉ báo -->
-            <div class="mt-6 flex justify-center space-x-2">
-              <span
-                v-for="(review, index) in reviews"
-                :key="index"
-                class="w-3 h-3 rounded-full transition-all duration-300"
-                :class="index === currentIndex ? 'bg-green-500' : 'bg-gray-300'"
-              ></span>
-            </div>
+          <!-- Chấm điều hướng -->
+          <div class="mt-8 flex justify-center space-x-2">
+            <span
+              v-for="(review, index) in reviews"
+              :key="index"
+              class="w-4 h-4 rounded-full transition duration-300 cursor-pointer"
+              :class="index === currentIndex ? 'bg-white' : 'bg-white/40'"
+              @click="goToReview(index)"
+            ></span>
           </div>
         </div>
       </section>
-      <section class="relative block py-24 lg:pt-0 bg-blueGray-800">
+
+      <section class="relative block py-24 bg-blueGray-800">
         <div class="container mx-auto px-4">
-          <div class="flex flex-wrap justify-center lg:-mt-64 -mt-48">
+          <div class="flex flex-wrap justify-center mt-12">
             <div class="w-full lg:w-6/12 px-4">
               <div
                 class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-200"
               >
                 <div class="flex-auto p-5 lg:p-10">
-                  <h4 class="text-2xl font-semibold">Want to work with us?</h4>
+                  <h4 class="text-2xl font-semibold">Bạn muốn làm việc với chúng tôi?</h4>
                   <p class="leading-relaxed mt-1 mb-4 text-blueGray-500">
-                    Complete this form and we will get back to you in 24 hours.
+                    Hãy hoàn thành mẫu này và chúng tôi sẽ phản hồi bạn trong vòng 24 giờ.
                   </p>
+
+                  <!-- Full Name -->
                   <div class="relative w-full mb-3 mt-8">
-                    <label
-                      class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                      htmlFor="full-name"
-                    >
-                      Full Name
+                    <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2">
+                      Tên đầy đủ
                     </label>
                     <input
                       type="text"
                       class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                      placeholder="Full Name"
+                      placeholder="Tên đầy đủ"
                     />
                   </div>
 
+                  <!-- Email -->
                   <div class="relative w-full mb-3">
-                    <label
-                      class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                      htmlFor="email"
-                    >
+                    <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2">
                       Email
                     </label>
                     <input
@@ -608,26 +573,25 @@
                     />
                   </div>
 
+                  <!-- Message -->
                   <div class="relative w-full mb-3">
-                    <label
-                      class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                      htmlFor="message"
-                    >
-                      Message
+                    <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2">
+                      Tin nhắn
                     </label>
                     <textarea
                       rows="4"
-                      cols="80"
                       class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
-                      placeholder="Type a message..."
-                    />
+                      placeholder="Nhập tin nhắn..."
+                    ></textarea>
                   </div>
+
+                  <!-- Button -->
                   <div class="text-center mt-6">
                     <button
-                      class="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                      class="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none ease-linear transition-all duration-150"
                       type="button"
                     >
-                      Send Message
+                      Gửi tin nhắn
                     </button>
                   </div>
                 </div>
@@ -641,10 +605,9 @@
   </div>
 </template>
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import Navbar from '@/components/Navbars/AuthNavbar.vue'
 import FooterComponent from '@/components/Footers/Footer.vue'
-
 const newTutors = [
   { id: 1, name: 'Trần Lê Hoài Thương', avatar: 'https://randomuser.me/api/portraits/women/1.jpg' },
   { id: 2, name: 'Dương Minh Hoàng', avatar: 'https://randomuser.me/api/portraits/men/2.jpg' },
@@ -758,31 +721,39 @@ const popularSubjects = [
 
 const reviews = ref([
   {
-    avatar: '/images/avatar1.jpg',
-    name: 'Chị Lan, Phụ huynh học sinh',
-    text: 'Con tôi học lớp 5... cảm ơn cô Lợi và trung tâm.',
+    avatar: 'https://i.pravatar.cc/150?img=36',
+    name: 'Chị Hương, Giáo viên',
+    text: 'Tôi đánh giá cao sự chuyên nghiệp của trung tâm.',
   },
   {
-    avatar: '/images/avatar2.jpg',
-    name: 'Thầy Bình, Giáo viên THCS',
-    text: 'Tôi rất hài lòng vì con tiến bộ rõ rệt sau vài buổi học.',
-  },
-  {
-    avatar: '/images/avatar3.jpg',
+    avatar: 'https://i.pravatar.cc/150?img=32',
     name: 'Anh Dũng, Phụ huynh',
     text: 'Gia sư hỗ trợ tận tình, con tôi đã tự giác học hơn hẳn.',
+  },
+  {
+    avatar: 'https://i.pravatar.cc/150?img=47',
+    name: 'Thảo My, SV ĐH Sài Gòn',
+    text: 'Mình nhận lớp từ trung tâm rất nhiều, hiện tại full lớp. Rất uy tín nhé mọi người!',
   },
 ])
 
 const currentIndex = ref(0)
 
-const nextReview = () => {
-  currentIndex.value = (currentIndex.value + 1) % reviews.value.length
+const goToReview = (index) => {
+  currentIndex.value = index
 }
 
-const prevReview = () => {
-  currentIndex.value = (currentIndex.value - 1 + reviews.value.length) % reviews.value.length
-}
+let intervalId = null
+
+onMounted(() => {
+  intervalId = setInterval(() => {
+    currentIndex.value = (currentIndex.value + 1) % reviews.value.length
+  }, 5000)
+})
+
+onUnmounted(() => {
+  clearInterval(intervalId)
+})
 </script>
 
 <style>
