@@ -25,6 +25,7 @@ import Profile from '@/views/Profile.vue'
 import Index from '@/views/Index.vue'
 
 import Article from '@/views/Article.vue'
+import DetailedArticle from '@/views/DetailedArticle.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -95,6 +96,10 @@ const router = createRouter({
     {
       path: '/article',
       component: Article,
+    },
+    {
+      path: '/article/detailedarticle',
+      component: DetailedArticle,
     },
     { path: '/:pathMatch(.*)*', redirect: '/' },
 
