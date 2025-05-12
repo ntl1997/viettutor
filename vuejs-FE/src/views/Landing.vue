@@ -722,18 +722,18 @@ const popularSubjects = [
 const reviews = ref([
   {
     avatar: 'https://i.pravatar.cc/150?img=36',
-    name: 'Chị Hương, Giáo viên',
-    text: 'Tôi đánh giá cao sự chuyên nghiệp của trung tâm.',
+    name: 'Chị Nhàn, Giáo viên',
+    text: 'Mình là Nhàn giáo viên dạy guitar, mình thường liên lạc chị My và chị Mượt để nhận lớp dạy kèm, Do mình chạy sô đi dạy nhiều nên không có thời gian qua trung tâm, mình chỉ qua 2 lần đầu tiên tại Q.8 còn những lần sau mình đều nhận lớp qua chuyển khoản, rất tiện lợi, các lớp có sự cố mình báo về trung tâm đều được giải quyết, mình rất an tâm nên có giới thiệu bạn bè mình để có cơ hội nhận lớp',
   },
   {
     avatar: 'https://i.pravatar.cc/150?img=32',
-    name: 'Anh Dũng, Phụ huynh',
-    text: 'Gia sư hỗ trợ tận tình, con tôi đã tự giác học hơn hẳn.',
+    name: 'Chị Hương, Phụ huynh',
+    text: 'Con tôi học lớp 5 là năm cuối cấp 1, tôi rất lo lắng về việc học cho con, công việc của tôi rất nhiều không có nhiều thời gian để kèm cặp con, tôi biết con tố chất thông minh nhưng hơi lười nên tôi rất cần một cô gia sư tận tâm thay tôi kèm cho con mỗi ngày, được người quen giới thiệu tôi đã được Trung tâm gia sư Tài Năng Trẻ sắp xếp cô gia sư Thủy Lợi sv đại học Y Dược, Nhờ sự nhiệt tình của gia sư cuối năm con tôi đạt thành tích xuất sắc, chân thành cảm ơn cô Lợi và trung tâm.',
   },
   {
     avatar: 'https://i.pravatar.cc/150?img=47',
     name: 'Thảo My, SV ĐH Sài Gòn',
-    text: 'Mình nhận lớp từ trung tâm rất nhiều, hiện tại full lớp. Rất uy tín nhé mọi người!',
+    text: 'Mình là Thảo My tốt nghiệp ĐH Sài Gòn, mình nhận lớp của trung tâm gia sư Tài Năng Trẻ rất nhiều, hiện tại giờ mình đang full lớp, không có thời gian nghỉ ngơi luôn, à mình chia sẻ là trung tâm làm việc rất okie nhé các bạn, các lớp mà lỗi do học viên không học trung tâm đều đối cho mình lớp khác hoặc hoàn lại phí, các bạn có thể nhận lớp qua chuyển khoản hoặc qua địa chỉ trung tâm ở Q.8 nhé.',
   },
 ])
 
