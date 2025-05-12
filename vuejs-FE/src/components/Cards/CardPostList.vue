@@ -1,13 +1,3 @@
-<!-- <template>
-  <div class="space-y-6">
-    <CardPost
-      v-for="(post, index) in posts"
-      :key="index"
-      :post="post"
-    />
-  </div>
-</template> -->
-
 <script setup>
 
 import CardPost from './CardPost.vue';
