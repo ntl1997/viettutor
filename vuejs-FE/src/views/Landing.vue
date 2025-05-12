@@ -388,10 +388,10 @@
         </div>
       </section>
 
-      <section class="pb-48">
+      <section class="pb-24">
         <div class="container mx-auto px-4">
           <!-- Tiêu đề -->
-          <div class="mb-6 text-left">
+          <div class="mb-4 text-left">
             <h2 class="text-3xl font-bold">
               Tìm gia sư theo các
               <span class="relative inline-block" style="color: green">
@@ -402,7 +402,7 @@
           </div>
           <!-- Danh sách button môn học -->
           <div class="flex flex-wrap -mx-2">
-            <div v-for="subject in popularSubjects" :key="subject" class="px-2 mb-4">
+            <div v-for="subject in popularSubjects" :key="subject" class="px-2 mb-2">
               <button class="subject-button">
                 {{ subject }}
               </button>
@@ -412,10 +412,10 @@
 
         <!-- Đăng ký ngay và Quy trình nhận lớp -->
         <div
-          class="bg-cover bg-center py-16 text-gray-900"
+          class="bg-cover bg-center py-12 text-gray-900"
           style="background-image: url('/images/bg-register.jpg')"
         >
-          <div class="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div class="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <!-- Bên trái: Đăng ký ngay -->
             <div>
               <h3 class="text-3xl font-bold mb-4">
@@ -425,7 +425,7 @@
                 </span>
                 ngay!
               </h3>
-              <ul class="text-lg mb-8 space-y-4">
+              <ul class="text-lg mb-6 space-y-2">
                 <li>
                   - <span style="color: green"><strong>Nếu bạn cần tìm Gia sư:</strong></span> hãy
                   <span class="text-green-700 font-bold">Đăng Ký ngay</span> để tiếp cận với hàng
@@ -439,24 +439,24 @@
               </ul>
 
               <!-- Thống kê -->
-              <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center mt-8">
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center mt-6">
                 <div>
-                  <div class="text-green-600 text-4xl mb-2">📘</div>
+                  <div class="text-green-600 text-4xl mb-1">📘</div>
                   <div class="text-2xl font-bold">754</div>
                   <div class="uppercase text-sm">Lớp mới mỗi ngày</div>
                 </div>
                 <div>
-                  <div class="text-green-600 text-4xl mb-2">😊</div>
+                  <div class="text-green-600 text-4xl mb-1">😊</div>
                   <div class="text-2xl font-bold">3,000</div>
                   <div class="uppercase text-sm">Gia sư</div>
                 </div>
                 <div>
-                  <div class="text-green-600 text-4xl mb-2">👥</div>
+                  <div class="text-green-600 text-4xl mb-1">👥</div>
                   <div class="text-2xl font-bold">675</div>
                   <div class="uppercase text-sm">Nhận lớp thành công</div>
                 </div>
                 <div>
-                  <div class="text-green-600 text-4xl mb-2">🎓</div>
+                  <div class="text-green-600 text-4xl mb-1">🎓</div>
                   <div class="text-2xl font-bold">1,248</div>
                   <div class="uppercase text-sm">Phụ huynh hài lòng</div>
                 </div>
@@ -464,11 +464,11 @@
             </div>
 
             <!-- Bên phải: Quy trình nhận lớp -->
-            <div class="mt-8 lg:mt-0">
+            <div class="mt-6 lg:mt-0">
               <h3 class="text-3xl font-bold mb-4">
                 Quy trình nhận lớp <span style="color: green">của gia sư</span>
               </h3>
-              <div class="text-lg space-y-4 leading-relaxed">
+              <div class="text-lg space-y-2 leading-relaxed">
                 <p>
                   Hướng dẫn nhận lớp tại web:<br />
                   <strong>Viettutor.vn</strong>
@@ -514,52 +514,56 @@
           </svg>
         </div>
 
-        <div class="container mx-auto px-4 lg:pt-24 lg:pb-64">
-          <div class="flex flex-wrap text-center justify-center">
-            <div class="w-full lg:w-6/12 px-4">
-              <h2 class="text-4xl font-semibold text-white">Build something</h2>
-              <p class="text-lg leading-relaxed mt-4 mb-4 text-blueGray-400">
-                Put the potentially record low maximum sea ice extent tihs year down to low ice.
-                According to the National Oceanic and Atmospheric Administration, Ted, Scambos.
-              </p>
-            </div>
+        <div class="container mx-auto px-4 py-24">
+          <!-- Tiêu đề -->
+          <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-white">NHẬN XÉT CỦA</h2>
+            <h3 class="text-3xl font-bold text-green-400 mt-2">PHỤ HUYNH & GIÁO VIÊN</h3>
           </div>
-          <div class="flex flex-wrap mt-12 justify-center">
-            <div class="w-full lg:w-3/12 px-4 text-center">
-              <div
-                class="text-blueGray-800 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center"
-              >
-                <i class="fas fa-medal text-xl"></i>
+
+          <!-- Box nhận xét -->
+          <div class="relative max-w-3xl mx-auto">
+            <div class="bg-white p-10 pt-20 rounded-lg shadow-xl relative">
+              <!-- Avatar nổi -->
+              <div class="absolute -top-12 left-1/2 transform -translate-x-1/2">
+                <img
+                  :src="reviews[currentIndex].avatar"
+                  alt="Avatar"
+                  class="w-24 h-24 rounded-full border-4 border-green-500 shadow-md object-cover"
+                />
               </div>
-              <h6 class="text-xl mt-5 font-semibold text-white">Excelent Services</h6>
-              <p class="mt-2 mb-4 text-blueGray-400">
-                Some quick example text to build on the card title and make up the bulk of the
-                card's content.
+
+              <!-- Nội dung nhận xét -->
+              <p class="text-lg text-gray-700 leading-relaxed text-center">
+                “{{ reviews[currentIndex].text }}”
               </p>
+              <h4 class="mt-4 text-green-600 font-semibold text-center">
+                {{ reviews[currentIndex].name }}
+              </h4>
             </div>
-            <div class="w-full lg:w-3/12 px-4 text-center">
-              <div
-                class="text-blueGray-800 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center"
-              >
-                <i class="fas fa-poll text-xl"></i>
-              </div>
-              <h5 class="text-xl mt-5 font-semibold text-white">Grow your market</h5>
-              <p class="mt-2 mb-4 text-blueGray-400">
-                Some quick example text to build on the card title and make up the bulk of the
-                card's content.
-              </p>
-            </div>
-            <div class="w-full lg:w-3/12 px-4 text-center">
-              <div
-                class="text-blueGray-800 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center"
-              >
-                <i class="fas fa-lightbulb text-xl"></i>
-              </div>
-              <h5 class="text-xl mt-5 font-semibold text-white">Launch time</h5>
-              <p class="mt-2 mb-4 text-blueGray-400">
-                Some quick example text to build on the card title and make up the bulk of the
-                card's content.
-              </p>
+
+            <!-- Nút điều hướng -->
+            <button
+              @click="prevReview"
+              class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-green-500 text-white p-3 rounded-full hover:bg-green-600 shadow"
+            >
+              ‹
+            </button>
+            <button
+              @click="nextReview"
+              class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-green-500 text-white p-3 rounded-full hover:bg-green-600 shadow"
+            >
+              ›
+            </button>
+
+            <!-- Chấm chỉ báo -->
+            <div class="mt-6 flex justify-center space-x-2">
+              <span
+                v-for="(review, index) in reviews"
+                :key="index"
+                class="w-3 h-3 rounded-full transition-all duration-300"
+                :class="index === currentIndex ? 'bg-green-500' : 'bg-gray-300'"
+              ></span>
             </div>
           </div>
         </div>
@@ -636,14 +640,10 @@
     <footer-component />
   </div>
 </template>
-<script>
+<script setup>
+import { ref } from 'vue'
 import Navbar from '@/components/Navbars/AuthNavbar.vue'
 import FooterComponent from '@/components/Footers/Footer.vue'
-
-import team1 from '@/assets/img/team-1-800x800.jpg'
-import team2 from '@/assets/img/team-2-800x800.jpg'
-import team3 from '@/assets/img/team-3-800x800.jpg'
-import team4 from '@/assets/img/team-4-470x470.png'
 
 const newTutors = [
   { id: 1, name: 'Trần Lê Hoài Thương', avatar: 'https://randomuser.me/api/portraits/women/1.jpg' },
@@ -756,23 +756,32 @@ const popularSubjects = [
   'Tiếng Việt lớp 5',
 ]
 
-export default {
-  data() {
-    return {
-      team1,
-      team2,
-      team3,
-      team4,
-      newTutors,
-      highlightedTutors,
-      newClasses,
-      popularSubjects,
-    }
+const reviews = ref([
+  {
+    avatar: '/images/avatar1.jpg',
+    name: 'Chị Lan, Phụ huynh học sinh',
+    text: 'Con tôi học lớp 5... cảm ơn cô Lợi và trung tâm.',
   },
-  components: {
-    Navbar,
-    FooterComponent,
+  {
+    avatar: '/images/avatar2.jpg',
+    name: 'Thầy Bình, Giáo viên THCS',
+    text: 'Tôi rất hài lòng vì con tiến bộ rõ rệt sau vài buổi học.',
   },
+  {
+    avatar: '/images/avatar3.jpg',
+    name: 'Anh Dũng, Phụ huynh',
+    text: 'Gia sư hỗ trợ tận tình, con tôi đã tự giác học hơn hẳn.',
+  },
+])
+
+const currentIndex = ref(0)
+
+const nextReview = () => {
+  currentIndex.value = (currentIndex.value + 1) % reviews.value.length
+}
+
+const prevReview = () => {
+  currentIndex.value = (currentIndex.value - 1 + reviews.value.length) % reviews.value.length
 }
 </script>
 
